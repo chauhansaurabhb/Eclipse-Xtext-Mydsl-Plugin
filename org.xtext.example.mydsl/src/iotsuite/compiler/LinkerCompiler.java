@@ -186,13 +186,22 @@ public class LinkerCompiler {
 									listOfFiles[i].getName(),
 									convertedTempNodeJSStringDeviceLinker);
 						} else {
+							
 							// NodeJS Sensor and actuator
-
-							copyNodeJSSensorGeneratedFromVocabulary(
-									GlobalVariable.NODEJS_ENABLED_DEVICES,
-									listOfFiles[i].getName(),
-									convertedTempNodeJSStringDeviceLinker
-											.get(j));
+							if (tempNodeJSStringDeviceLinker.contains("true")) {
+								copyNodeJSSensorGeneratedFromVocabulary(
+										GlobalVariable.NODEJS_ENABLED_DEVICES,
+										listOfFiles[i].getName(),
+										convertedTempNodeJSStringDeviceLinker
+												.get(j));
+							} else {
+								// Nodejs applicationlogic
+								copyNodejsApplicationLogicArchitectureSpecification(
+										GlobalVariable.NODEJS_ENABLED_DEVICES,
+										listOfFiles[i].getName(),
+										convertedTempNodeJSStringDeviceLinker
+												.get(j));
+							}
 
 						}
 
@@ -860,6 +869,38 @@ public class LinkerCompiler {
 	 * 
 	 * }
 	 */
+	
+	
+	// Nodejs application logic
+
+		public static void copyNodejsApplicationLogicArchitectureSpecification(
+				String type, String name, String softwareComponmentNameToPick) {
+
+			/*
+			 * File srcFile = new File(GlobalVariable.templatePath + "/" + type +
+			 * "DeviceDrivers" + "/src/deviceImpl/" + type +
+			 * softwareComponmentNameToPick + ".js");
+			 * 
+			 * File destFolder = new File(GlobalVariable.templatePath + "/" +
+			 * GlobalVariable.deploymentFolderPath + "/" + name +
+			 * "/src/deviceImpl");
+			 */
+
+			File srcFile = new File(GlobalVariable.templatePath + "/"
+					+ "ApplicationLogic/src/logic/" + "Logic"
+					+ softwareComponmentNameToPick + ".js");
+
+			File destFolder = new File(GlobalVariable.templatePath + "/"
+					+ GlobalVariable.deploymentFolderPath + "/" + name + "/src/"
+					+ "logic");
+
+			try {
+				FileUtils.copyFileToDirectory(srcFile, destFolder);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+		}
 
 	public static void copyApplicationLogicArchitectureSpecification(
 			String type, String name, String softwareComponmentNameToPick) {

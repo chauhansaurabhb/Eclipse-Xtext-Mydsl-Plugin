@@ -168,6 +168,7 @@ public class ComputationalServiceCompiler {
 	public void generateAggregatorComputationalServiceCode() {
 		generateComputationalServiceInteraction_ComputationalServiceCompiler();
 		generateAggregatorComputationalServiceLogic_ComputationalServiceCompiler();
+		generateNodejsAggregatorComputationalServiceLogic_ComputationalServiceCompiler();
 		generateAggregatorComputationalServiceFactory_ComputationalServiceCompiler();
 		generateAggregatorComputationalServiceInterface_ComputationalServiceCompiler();
 
@@ -184,6 +185,7 @@ public class ComputationalServiceCompiler {
 	public void generateComputationalServiceCode() {
 		generateComputationalServiceInteraction_ComputationalServiceCompiler();
 		generateComputationalServiceLogic_ComputationalServiceCompiler();
+		generateNodejsComputationalServiceLogic_ComputationalServiceCompiler();
 	}
 
 	public void generateComputationalServiceInteraction_ComputationalServiceCompiler() {
@@ -194,6 +196,15 @@ public class ComputationalServiceCompiler {
 		dumpGeneratedComputationalService.dumpCompilationUnit(generatedCU);
 
 	}
+	
+	// Node.js aggregator
+		public void generateNodejsAggregatorComputationalServiceLogic_ComputationalServiceCompiler() {
+			JavaFrameworkFromST generatedComputationalService = new JavaFrameworkFromST();
+			CompilationUnit generatedCU = generatedComputationalService
+					.generateAggregatorComputationalServiceLogicNodejs(computationalService);
+			SourceFileDumper dumpGeneratedComputationalService = new SourceFileDumper();
+			dumpGeneratedComputationalService.dumpCompilationUnit(generatedCU);
+		}
 
 	public void generateAggregatorComputationalServiceLogic_ComputationalServiceCompiler() {
 		JavaFrameworkFromST generatedComputationalService = new JavaFrameworkFromST();
@@ -203,6 +214,18 @@ public class ComputationalServiceCompiler {
 		dumpGeneratedComputationalService.dumpCompilationUnit(generatedCU);
 	}
 
+	
+	// Computational service for Nodejs
+
+		public void generateNodejsComputationalServiceLogic_ComputationalServiceCompiler() {
+			JavaFrameworkFromST generatedComputationalService = new JavaFrameworkFromST();
+			CompilationUnit generatedCU = generatedComputationalService
+					.generateComputationalServiceLogicNodejs(computationalService);
+			SourceFileDumper dumpGeneratedComputationalService = new SourceFileDumper();
+			dumpGeneratedComputationalService.dumpCompilationUnit(generatedCU);
+		}
+		
+		
 	public void generateComputationalServiceLogic_ComputationalServiceCompiler() {
 		JavaFrameworkFromST generatedComputationalService = new JavaFrameworkFromST();
 		CompilationUnit generatedCU = generatedComputationalService
