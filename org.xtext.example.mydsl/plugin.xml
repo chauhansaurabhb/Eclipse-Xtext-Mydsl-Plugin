@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<?eclipse version="3.0"?>
+<plugin>
+<extension point="org.eclipse.emf.ecore.generated_package">
+			<package 
+			uri = "http://www.xtext.org/example/mydsl/MyDsl"
+			class = "org.xtext.example.mydsl.myDsl.MyDslPackage"
+			genModel = "model/generated/MyDsl.genmodel" />			
+	</extension>
+<extension
+      point="org.eclipse.ui.menus">
+   <menuContribution
+         allPopups="false"
+         locationURI="popup:org.eclipse.ui.popup.any">
+      <command
+            commandId="CompileVocabSpec"
+            label="Compile Vocab"
+            style="push">
+       <visibleWhen
+              checkEnabled="false">
+           <iterate
+                 ifEmpty="false"
+                 operator="or">
+              <test
+                    property="org.eclipse.core.resources.name"
+                    value="vocab.mydsl">
+              </test>
+           </iterate>
+        </visibleWhen>     
+      </command>
+      <command
+            commandId="CompileArchSpec"
+            label="Compile Arch"
+            style="push">
+         <visibleWhen
+               checkEnabled="false">
+            <iterate
+                  ifEmpty="false"
+                  operator="or">
+               <test
+                     property="org.eclipse.core.resources.name"
+                     value="arch.mydsl">
+               </test>
+            </iterate>
+         </visibleWhen>
+      </command>
+      <command
+            commandId="CompileInteractionSpec"
+            label="Compile UserInteraction"
+            style="push">
+         <visibleWhen
+               checkEnabled="false">
+            <iterate
+                  ifEmpty="false"
+                  operator="or">
+               <test
+                     property="org.eclipse.core.resources.name"
+                     value="userinteraction.mydsl">
+               </test>
+            </iterate>
+         </visibleWhen>
+      </command>
+      <command
+            commandId="CompileDeploySpec"
+            label="Compile Deploy"
+            style="push">
+         <visibleWhen
+               checkEnabled="false">
+            <iterate
+                  ifEmpty="false"
+                  operator="or">
+               <test
+                     property="org.eclipse.core.resources.name"
+                     value="deploy.mydsl">
+               </test>
+            </iterate>
+         </visibleWhen>
+      </command>
+   </menuContribution>
+</extension>
+<extension
+      point="org.eclipse.ui.handlers">
+   <handler
+         commandId="CompileVocabSpec"
+         class="org.xtext.example.mydsl.popup.actions.CompileVocabSpec">
+   </handler>
+</extension>
+<extension
+      point="org.eclipse.ui.handlers">
+   <handler
+         class="org.xtext.example.mydsl.popup.actions.CompileArchSpec"
+         commandId="CompileArchSpec">
+   </handler>
+</extension>
+<extension
+      point="org.eclipse.ui.handlers">
+   <handler
+         class="org.xtext.example.mydsl.popup.actions.CompileInteractionSpec"
+         commandId="CompileInteractionSpec">
+   </handler>
+</extension>
+<extension
+      point="org.eclipse.ui.handlers">
+   <handler
+         class="org.xtext.example.mydsl.popup.actions.CompileDeploySpec"
+         commandId="CompileDeploySpec">
+   </handler>
+</extension>
+</plugin>
