@@ -71,15 +71,124 @@ public class Main {
 			CommonTokenStream vocTokens = new CommonTokenStream(vocLexer);
 			VocabSpecParser vocParser = new VocabSpecParser(vocTokens);
 			vocParser.vocabSpec();
+			
+			
+			iotsuite.parser.SymbolTable.StructFieldSet.clear();
+			iotsuite.parser.SymbolTable.arrayFieldName = new String[200][200];
+			iotsuite.parser.SymbolTable.arrayFieldType = new String[200][200];
+			iotsuite.parser.SymbolTable.rowCountInFieldName=0;
+			iotsuite.parser.SymbolTable.rowCountInFieldType=0;
+			iotsuite.parser.SymbolTable.columnCountInFieldName=0;
+			iotsuite.parser.SymbolTable.columnCountinFieldType=0;
+			
+			 
+			iotsuite.parser.SymbolTable.structSymblTable.clear();
+			iotsuite.parser.SymbolTable.structNameSymblTable.clear();
+			iotsuite.parser.SymbolTable.structField.clear();
+			iotsuite.parser.SymbolTable.consumeInfoForSensor.clear();
+			iotsuite.parser.SymbolTable.responseSymblTable.clear();
+			iotsuite.parser.SymbolTable.listStorageFieldName.clear();
+			iotsuite.parser.SymbolTable.listStorageFieldType.clear();
+			iotsuite.parser.SymbolTable.StructFieldSetForEventDriven.clear();
+			iotsuite.parser.SymbolTable.StructFieldSetForPeriodic.clear();
+			iotsuite.parser.SymbolTable.tempListActuatorFieldName.clear();
+			iotsuite.parser.SymbolTable.tempListActuatorFieldType.clear();
+			iotsuite.parser.SymbolTable.tempListStorageFieldName.clear();
+			iotsuite.parser.SymbolTable.tempListStorageFieldType.clear();
+			iotsuite.parser.SymbolTable.tempListStorageActionFieldName.clear();
+			iotsuite.parser.SymbolTable.tempListStorageActionFieldType.clear();			
+			iotsuite.parser.SymbolTable.responseSymblTable.clear();
+
+
+			
+			
+		//	GlobalVariable.activity="compile-arch-spec";
+			
+		/*	updated comment
+			iotsuite.parser.SymbolTable.structSymblTable.clear();
+			iotsuite.parser.SymbolTable.structNameSymblTable.clear();
+			iotsuite.parser.SymbolTable.structField.clear();
+		    iotsuite.parser.SymbolTable.consumeInfoForSensor.clear();
+			iotsuite.parser.SymbolTable.responseSymblTable.clear();
+			iotsuite.parser.SymbolTable.listStorageFieldName.clear();
+			iotsuite.parser.SymbolTable.listStorageFieldType.clear();
+			iotsuite.parser.SymbolTable.StructFieldSetForEventDriven.clear();
+			iotsuite.parser.SymbolTable.StructFieldSetForPeriodic.clear();
+			iotsuite.parser.SymbolTable.tempListActuatorFieldName.clear();
+			iotsuite.parser.SymbolTable.tempListActuatorFieldType.clear();
+			iotsuite.parser.SymbolTable.tempListStorageFieldName.clear();
+			iotsuite.parser.SymbolTable.tempListStorageFieldType.clear();
+			iotsuite.parser.SymbolTable.tempListStorageActionFieldName.clear();
+			iotsuite.parser.SymbolTable.tempListStorageActionFieldType.clear();			
+			iotsuite.parser.SymbolTable.responseSymblTable.clear();
+			iotsuite.parser.SymbolTable.arrayFieldName = new String[200][200];
+			iotsuite.parser.SymbolTable.arrayFieldType = new String[200][200];
+			*/
+			
+			//System.exit(0);
 			// GenFiller.copyDeviceDrivers();
 			
-			iotsuite.parser.SymbolTable.consumeInfoForSensor.clear();	
+		//	iotsuite.parser.SymbolTable.consumeInfoForSensor.clear();
+			
+			// Updated
+		/* 	iotsuite.parser.SymbolTable.listStorageFieldName.clear();			 	
+		 	iotsuite.parser.SymbolTable.listStorageFieldType.clear();	
+		 	
+		 	iotsuite.parser.SymbolTable.tempListStorageFieldName.clear();	
+		 	iotsuite.parser.SymbolTable.tempListStorageFieldType.clear();	
+		 	iotsuite.parser.SymbolTable.tempListActuatorFieldName.clear();	
+		 	iotsuite.parser.SymbolTable.tempListActuatorFieldType.clear();	
+		 	iotsuite.parser.SymbolTable.tempListStorageActionFieldName.clear();	
+		 	iotsuite.parser.SymbolTable.tempListStorageActionFieldType.clear();	
+		 	iotsuite.parser.SymbolTable.structNameSymblTable.clear();	
+		 	iotsuite.parser.SymbolTable.structField.clear();	
+		 	iotsuite.parser.SymbolTable.eventDrivenFields.clear();	
+		 	iotsuite.parser.SymbolTable.periodicFieldName.clear();	
+		 //	iotsuite.parser.SymbolTable.aggregatorFieldName.clear();	
+		 	iotsuite.parser.SymbolTable.eventDrivenFieldName.clear();	
+		 	iotsuite.parser.SymbolTable.structSymblTable.clear();	
+		 	iotsuite.parser.SymbolTable.responseSymblTable.clear();	
+		 	iotsuite.parser.SymbolTable.deviceList.clear();	
+		 	
+		 	
+		 	iotsuite.parser.SymbolTable.deploymentConstraintsList.clear();	
+		 	iotsuite.parser.SymbolTable.dataAccessSymblTable.clear();	
+		 	iotsuite.parser.SymbolTable.StructFieldSet.clear();	
+		 	iotsuite.parser.SymbolTable.StructFieldSetForGUI.clear();	
+		 	iotsuite.parser.SymbolTable.StructFieldSetForGUINotify.clear();	
+		 	iotsuite.parser.SymbolTable.StructFieldSetForStorage.clear();	
+		 	iotsuite.parser.SymbolTable.StructFieldSetForEventDriven.clear();	
+		 	iotsuite.parser.SymbolTable.StructFieldSetForPeriodic.clear();	
+		 	
+		 	
+		 	
+		 	iotsuite.parser.SymbolTable.arrayFieldName= new String[200][200];
+		    iotsuite.parser.SymbolTable.arrayFieldType=  new String[200][200];
+		    iotsuite.parser.SymbolTable.arrayGUIGeneratedInfo = new String[10][2];
+		    iotsuite.parser.SymbolTable.keys= new String[10];*/
+		 	
+		 	
+		 	
+	 	 /*  Arrays.fill(iotsuite.parser.SymbolTable.arrayFieldName,null);
+		 	Arrays.fill(iotsuite.parser.SymbolTable.arrayFieldType,null);
+		 	Arrays.fill(iotsuite.parser.SymbolTable.arrayGUIGeneratedInfo,null);
+		 	Arrays.fill(iotsuite.parser.SymbolTable.keys,null);*/
+		 	
+		 	
+/*		 	iotsuite.parser.SymbolTable.arrayGUIGeneratedInfo= new String[0][0];
+		 	iotsuite.parser.SymbolTable.keys= new String[0];
+		 	*/
+		 	
+		 	
+		 	
 		  				
 		}
 
 		if (GlobalVariable.activity
 				.equals(GlobalVariable.ACTIVITY_GENERATE_USERINTERACTION)) {
 
+			
+		
 			ANTLRFileStream vocStream = new ANTLRFileStream(
 					GlobalVariable.vocabSpec);
 			VocabSpecLexer vocLexer = new VocabSpecLexer(vocStream);
@@ -105,7 +214,73 @@ public class Main {
 			InteractionSpecParser interactionParser = new InteractionSpecParser(
 					interactionTokens);
 			interactionParser.interactionSpec();
-
+			//System.exit(0);
+			
+			iotsuite.parser.SymbolTable.StructFieldSet.clear();
+			iotsuite.parser.SymbolTable.arrayFieldName = new String[200][200];
+			iotsuite.parser.SymbolTable.arrayFieldType = new String[200][200];
+			
+			
+		/*	updated comment
+		 * iotsuite.parser.SymbolTable.structSymblTable.clear();
+			iotsuite.parser.SymbolTable.structNameSymblTable.clear();
+			iotsuite.parser.SymbolTable.structField.clear();
+			//iotsuite.parser.SymbolTable.consumeInfoForSensor.clear();
+			iotsuite.parser.SymbolTable.responseSymblTable.clear();
+			iotsuite.parser.SymbolTable.listStorageFieldName.clear();
+			iotsuite.parser.SymbolTable.listStorageFieldType.clear();
+			iotsuite.parser.SymbolTable.StructFieldSetForEventDriven.clear();
+			iotsuite.parser.SymbolTable.StructFieldSetForPeriodic.clear();
+			iotsuite.parser.SymbolTable.tempListActuatorFieldName.clear();
+			iotsuite.parser.SymbolTable.tempListActuatorFieldType.clear();
+			iotsuite.parser.SymbolTable.tempListStorageFieldName.clear();
+			iotsuite.parser.SymbolTable.tempListStorageFieldType.clear();
+			iotsuite.parser.SymbolTable.tempListStorageActionFieldName.clear();
+			iotsuite.parser.SymbolTable.tempListStorageActionFieldType.clear();			
+			iotsuite.parser.SymbolTable.responseSymblTable.clear();
+			iotsuite.parser.SymbolTable.arrayFieldName = new String[200][200];
+			iotsuite.parser.SymbolTable.arrayFieldType = new String[200][200];*/
+			
+			
+      /*    iotsuite.parser.SymbolTable.consumeInfoForSensor.clear();
+			
+			// Updated
+		 	iotsuite.parser.SymbolTable.listStorageFieldName.clear();			 	
+		 	iotsuite.parser.SymbolTable.listStorageFieldType.clear();	
+		 	
+		 	iotsuite.parser.SymbolTable.tempListStorageFieldName.clear();	
+		 	iotsuite.parser.SymbolTable.tempListStorageFieldType.clear();	
+		 	iotsuite.parser.SymbolTable.tempListActuatorFieldName.clear();	
+		 	iotsuite.parser.SymbolTable.tempListActuatorFieldType.clear();	
+		 	iotsuite.parser.SymbolTable.tempListStorageActionFieldName.clear();	
+		 	iotsuite.parser.SymbolTable.tempListStorageActionFieldType.clear();	
+		 	iotsuite.parser.SymbolTable.structNameSymblTable.clear();	
+		 	iotsuite.parser.SymbolTable.structField.clear();	
+		 	iotsuite.parser.SymbolTable.eventDrivenFields.clear();	
+		 	iotsuite.parser.SymbolTable.periodicFieldName.clear();	
+		 //	iotsuite.parser.SymbolTable.aggregatorFieldName.clear();	
+		 	iotsuite.parser.SymbolTable.eventDrivenFieldName.clear();	
+		 	iotsuite.parser.SymbolTable.structSymblTable.clear();	
+		 	iotsuite.parser.SymbolTable.responseSymblTable.clear();	
+		 	iotsuite.parser.SymbolTable.deviceList.clear();	
+		 	
+		 	
+		 	iotsuite.parser.SymbolTable.deploymentConstraintsList.clear();	
+		 	iotsuite.parser.SymbolTable.dataAccessSymblTable.clear();	
+		 	iotsuite.parser.SymbolTable.StructFieldSet.clear();	
+		 	iotsuite.parser.SymbolTable.StructFieldSetForGUI.clear();	
+		 	iotsuite.parser.SymbolTable.StructFieldSetForGUINotify.clear();	
+		 	iotsuite.parser.SymbolTable.StructFieldSetForStorage.clear();	
+		 	iotsuite.parser.SymbolTable.StructFieldSetForEventDriven.clear();	
+		 	iotsuite.parser.SymbolTable.StructFieldSetForPeriodic.clear();	*/
+		 	
+		 	
+		 
+		 	/*iotsuite.parser.SymbolTable.arrayFieldName= new String[0][0];	
+		 	iotsuite.parser.SymbolTable.arrayFieldType= new String[0][0];
+		 	
+		 	iotsuite.parser.SymbolTable.arrayGUIGeneratedInfo= new String[0][0];
+		 	iotsuite.parser.SymbolTable.keys= new String[0];*/
 			// GenFiller.copyDeviceDrivers();
 
 		}
@@ -113,8 +288,7 @@ public class Main {
 		if (GlobalVariable.activity
 				.equals(GlobalVariable.ACTIVITY_GENERATE_ARCHITECTUREFRAMEWORK)) {
 
-			//iotsuite.parser.SymbolTable.consumeInfoForSensor.clear();	
-		// System.out.println("ConsumeInfoForSensor"+ iotsuite.parser.SymbolTable.consumeInfoForSensor);
+		
 			
 			ANTLRFileStream vocStream = new ANTLRFileStream(
 					GlobalVariable.vocabSpec);
@@ -123,7 +297,6 @@ public class Main {
 			VocabSpecParser vocParser = new VocabSpecParser(vocTokens);
 			vocParser.vocabSpec();
 		
-//			System.out.println("ConsumeInfoForSensor"+ iotsuite.parser.SymbolTable.consumeInfoForSensor);
 		
 			
 			ANTLRFileStream interactionStream = new ANTLRFileStream(
@@ -153,6 +326,70 @@ public class Main {
 			CommonTokenStream archTokens = new CommonTokenStream(archLexer);
 			ArchSpecParser archParser = new ArchSpecParser(archTokens);
 			archParser.archSpec();
+		/*	 updated comment
+			iotsuite.parser.SymbolTable.structSymblTable.clear();
+			iotsuite.parser.SymbolTable.structNameSymblTable.clear();
+			iotsuite.parser.SymbolTable.structField.clear();
+		//	iotsuite.parser.SymbolTable.consumeInfoForSensor.clear();
+			iotsuite.parser.SymbolTable.responseSymblTable.clear();
+			iotsuite.parser.SymbolTable.listStorageFieldName.clear();
+			iotsuite.parser.SymbolTable.listStorageFieldType.clear();
+			iotsuite.parser.SymbolTable.StructFieldSetForEventDriven.clear();
+			iotsuite.parser.SymbolTable.StructFieldSetForPeriodic.clear();
+			iotsuite.parser.SymbolTable.tempListActuatorFieldName.clear();
+			iotsuite.parser.SymbolTable.tempListActuatorFieldType.clear();
+			iotsuite.parser.SymbolTable.tempListStorageFieldName.clear();
+			iotsuite.parser.SymbolTable.tempListStorageFieldType.clear();
+			iotsuite.parser.SymbolTable.tempListStorageActionFieldName.clear();
+			iotsuite.parser.SymbolTable.tempListStorageActionFieldType.clear();			
+			iotsuite.parser.SymbolTable.responseSymblTable.clear();
+			iotsuite.parser.SymbolTable.arrayFieldName = new String[200][200];
+			iotsuite.parser.SymbolTable.arrayFieldType = new String[200][200];*/
+		//	System.exit(0);
+			
+			
+          /*   iotsuite.parser.SymbolTable.consumeInfoForSensor.clear();
+			
+			// Updated
+		 	iotsuite.parser.SymbolTable.listStorageFieldName.clear();			 	
+		 	iotsuite.parser.SymbolTable.listStorageFieldType.clear();	
+		 	
+		 	iotsuite.parser.SymbolTable.tempListStorageFieldName.clear();	
+		 	iotsuite.parser.SymbolTable.tempListStorageFieldType.clear();	
+		 	iotsuite.parser.SymbolTable.tempListActuatorFieldName.clear();	
+		 	iotsuite.parser.SymbolTable.tempListActuatorFieldType.clear();	
+		 	iotsuite.parser.SymbolTable.tempListStorageActionFieldName.clear();	
+		 	iotsuite.parser.SymbolTable.tempListStorageActionFieldType.clear();	
+		 	iotsuite.parser.SymbolTable.structNameSymblTable.clear();	
+		 	iotsuite.parser.SymbolTable.structField.clear();	
+		 	iotsuite.parser.SymbolTable.eventDrivenFields.clear();	
+		 	iotsuite.parser.SymbolTable.periodicFieldName.clear();	
+		// 	iotsuite.parser.SymbolTable.aggregatorFieldName.clear();	
+		 	iotsuite.parser.SymbolTable.eventDrivenFieldName.clear();	
+		 	iotsuite.parser.SymbolTable.structSymblTable.clear();	
+		 	iotsuite.parser.SymbolTable.responseSymblTable.clear();	
+		 	iotsuite.parser.SymbolTable.deviceList.clear();	
+		 	
+		 	
+		 	iotsuite.parser.SymbolTable.deploymentConstraintsList.clear();	
+		 	iotsuite.parser.SymbolTable.dataAccessSymblTable.clear();	
+		 	iotsuite.parser.SymbolTable.StructFieldSet.clear();	
+		 	iotsuite.parser.SymbolTable.StructFieldSetForGUI.clear();	
+		 	iotsuite.parser.SymbolTable.StructFieldSetForGUINotify.clear();	
+		 	iotsuite.parser.SymbolTable.StructFieldSetForStorage.clear();	
+		 	iotsuite.parser.SymbolTable.StructFieldSetForEventDriven.clear();	
+		 	iotsuite.parser.SymbolTable.StructFieldSetForPeriodic.clear();	
+		 	
+			iotsuite.parser.SymbolTable.arrayFieldName= new String[200][200];
+		    iotsuite.parser.SymbolTable.arrayFieldType=  new String[200][200];
+		    iotsuite.parser.SymbolTable.arrayGUIGeneratedInfo = new String[10][2];
+		    iotsuite.parser.SymbolTable.keys= new String[10];
+		 	
+		 	iotsuite.parser.SymbolTable.arrayFieldName= new String[0][0];	
+		 	iotsuite.parser.SymbolTable.arrayFieldType= new String[0][0];
+		 	
+		 	iotsuite.parser.SymbolTable.arrayGUIGeneratedInfo= new String[0][0];
+		 	iotsuite.parser.SymbolTable.keys= new String[0];*/
 			// GenFiller.copyApplicationLogic();
 		}
 

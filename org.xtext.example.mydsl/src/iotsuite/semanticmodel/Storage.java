@@ -70,7 +70,7 @@ public class Storage extends SoftwareComponent {
 	}
 
 	public List<String> getAllfieldName() {
-		id = fieldName.get(0);
+		//id = fieldName.get(0);
 		return fieldName;
 	}
 
@@ -79,6 +79,7 @@ public class Storage extends SoftwareComponent {
 	}
 
 	public List<StructField> getAllStructField() {
+		id = fieldName.get(0);
 		ArrayList<StructField> allStructFields = new ArrayList<StructField>();
 		allStructFields.addAll(getstructField());
 		return allStructFields;

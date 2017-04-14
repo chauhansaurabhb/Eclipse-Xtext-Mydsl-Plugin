@@ -29,6 +29,7 @@ public class CompileInteractionSpec extends AbstractHandler implements IHandler 
 					JOptionPane.showMessageDialog(frame,
 							"Compilation of userinteraction.mydsl is successful",
 							"Compilation Message", JOptionPane.INFORMATION_MESSAGE);
+				//	System.exit(0);
 					
 				} catch (Exception e) {
 					e.printStackTrace();

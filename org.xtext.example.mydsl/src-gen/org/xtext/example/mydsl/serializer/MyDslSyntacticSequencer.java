@@ -11,7 +11,6 @@ import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AlternativeAlias;
-import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
@@ -29,22 +28,15 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_ArchSpec_StructsKeyword_0_0_q;
 	protected AbstractElementAlias match_EventConditions___EqualsSignKeyword_1_2_or_GreaterThanSignKeyword_1_0_or_LessThanSignKeyword_1_1__a;
 	protected AbstractElementAlias match_InteractionSpec_ResourcesKeyword_1_a;
+	protected AbstractElementAlias match_InteractionSpec_ResourcesKeyword_1_p;
 	protected AbstractElementAlias match_InteractionSpec_StructsKeyword_0_0_q;
-	protected AbstractElementAlias match_InteractionSpec_UserInteractionsKeyword_2_0_a;
-	protected AbstractElementAlias match_InteractionSpec_UserInteractionsKeyword_2_0_p;
-	protected AbstractElementAlias match_InteractionSpec___UserInteractionsKeyword_2_0_p_or___ResourcesKeyword_1_p_UserInteractionsKeyword_2_0_p____q;
-	protected AbstractElementAlias match_VocSpec_ActuatorsKeyword_8_0_a;
-	protected AbstractElementAlias match_VocSpec_ActuatorsKeyword_8_0_p;
-	protected AbstractElementAlias match_VocSpec_EventDrivenSensorsKeyword_5_0_a;
-	protected AbstractElementAlias match_VocSpec_EventDrivenSensorsKeyword_5_0_p;
-	protected AbstractElementAlias match_VocSpec_PeriodicSensorsKeyword_4_0_a;
-	protected AbstractElementAlias match_VocSpec_PeriodicSensorsKeyword_4_0_p;
-	protected AbstractElementAlias match_VocSpec_RequestBasedSensorsKeyword_6_0_a;
-	protected AbstractElementAlias match_VocSpec_RequestBasedSensorsKeyword_6_0_p;
-	protected AbstractElementAlias match_VocSpec_StoragesKeyword_9_0_a;
-	protected AbstractElementAlias match_VocSpec_StoragesKeyword_9_0_p;
-	protected AbstractElementAlias match_VocSpec_TagsKeyword_7_0_a;
-	protected AbstractElementAlias match_VocSpec_TagsKeyword_7_0_p;
+	protected AbstractElementAlias match_InteractionSpec_UserInteractionsKeyword_2_0_q;
+	protected AbstractElementAlias match_VocSpec_ActuatorsKeyword_8_0_q;
+	protected AbstractElementAlias match_VocSpec_EventDrivenSensorsKeyword_5_0_q;
+	protected AbstractElementAlias match_VocSpec_PeriodicSensorsKeyword_4_0_q;
+	protected AbstractElementAlias match_VocSpec_RequestBasedSensorsKeyword_6_0_q;
+	protected AbstractElementAlias match_VocSpec_StoragesKeyword_9_0_q;
+	protected AbstractElementAlias match_VocSpec_TagsKeyword_7_0_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
@@ -56,22 +48,15 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_ArchSpec_StructsKeyword_0_0_q = new TokenAlias(false, true, grammarAccess.getArchSpecAccess().getStructsKeyword_0_0());
 		match_EventConditions___EqualsSignKeyword_1_2_or_GreaterThanSignKeyword_1_0_or_LessThanSignKeyword_1_1__a = new AlternativeAlias(true, true, new TokenAlias(false, false, grammarAccess.getEventConditionsAccess().getEqualsSignKeyword_1_2()), new TokenAlias(false, false, grammarAccess.getEventConditionsAccess().getGreaterThanSignKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getEventConditionsAccess().getLessThanSignKeyword_1_1()));
 		match_InteractionSpec_ResourcesKeyword_1_a = new TokenAlias(true, true, grammarAccess.getInteractionSpecAccess().getResourcesKeyword_1());
+		match_InteractionSpec_ResourcesKeyword_1_p = new TokenAlias(true, false, grammarAccess.getInteractionSpecAccess().getResourcesKeyword_1());
 		match_InteractionSpec_StructsKeyword_0_0_q = new TokenAlias(false, true, grammarAccess.getInteractionSpecAccess().getStructsKeyword_0_0());
-		match_InteractionSpec_UserInteractionsKeyword_2_0_a = new TokenAlias(true, true, grammarAccess.getInteractionSpecAccess().getUserInteractionsKeyword_2_0());
-		match_InteractionSpec_UserInteractionsKeyword_2_0_p = new TokenAlias(true, false, grammarAccess.getInteractionSpecAccess().getUserInteractionsKeyword_2_0());
-		match_InteractionSpec___UserInteractionsKeyword_2_0_p_or___ResourcesKeyword_1_p_UserInteractionsKeyword_2_0_p____q = new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(true, false, grammarAccess.getInteractionSpecAccess().getResourcesKeyword_1()), new TokenAlias(true, false, grammarAccess.getInteractionSpecAccess().getUserInteractionsKeyword_2_0())), new TokenAlias(true, false, grammarAccess.getInteractionSpecAccess().getUserInteractionsKeyword_2_0()));
-		match_VocSpec_ActuatorsKeyword_8_0_a = new TokenAlias(true, true, grammarAccess.getVocSpecAccess().getActuatorsKeyword_8_0());
-		match_VocSpec_ActuatorsKeyword_8_0_p = new TokenAlias(true, false, grammarAccess.getVocSpecAccess().getActuatorsKeyword_8_0());
-		match_VocSpec_EventDrivenSensorsKeyword_5_0_a = new TokenAlias(true, true, grammarAccess.getVocSpecAccess().getEventDrivenSensorsKeyword_5_0());
-		match_VocSpec_EventDrivenSensorsKeyword_5_0_p = new TokenAlias(true, false, grammarAccess.getVocSpecAccess().getEventDrivenSensorsKeyword_5_0());
-		match_VocSpec_PeriodicSensorsKeyword_4_0_a = new TokenAlias(true, true, grammarAccess.getVocSpecAccess().getPeriodicSensorsKeyword_4_0());
-		match_VocSpec_PeriodicSensorsKeyword_4_0_p = new TokenAlias(true, false, grammarAccess.getVocSpecAccess().getPeriodicSensorsKeyword_4_0());
-		match_VocSpec_RequestBasedSensorsKeyword_6_0_a = new TokenAlias(true, true, grammarAccess.getVocSpecAccess().getRequestBasedSensorsKeyword_6_0());
-		match_VocSpec_RequestBasedSensorsKeyword_6_0_p = new TokenAlias(true, false, grammarAccess.getVocSpecAccess().getRequestBasedSensorsKeyword_6_0());
-		match_VocSpec_StoragesKeyword_9_0_a = new TokenAlias(true, true, grammarAccess.getVocSpecAccess().getStoragesKeyword_9_0());
-		match_VocSpec_StoragesKeyword_9_0_p = new TokenAlias(true, false, grammarAccess.getVocSpecAccess().getStoragesKeyword_9_0());
-		match_VocSpec_TagsKeyword_7_0_a = new TokenAlias(true, true, grammarAccess.getVocSpecAccess().getTagsKeyword_7_0());
-		match_VocSpec_TagsKeyword_7_0_p = new TokenAlias(true, false, grammarAccess.getVocSpecAccess().getTagsKeyword_7_0());
+		match_InteractionSpec_UserInteractionsKeyword_2_0_q = new TokenAlias(false, true, grammarAccess.getInteractionSpecAccess().getUserInteractionsKeyword_2_0());
+		match_VocSpec_ActuatorsKeyword_8_0_q = new TokenAlias(false, true, grammarAccess.getVocSpecAccess().getActuatorsKeyword_8_0());
+		match_VocSpec_EventDrivenSensorsKeyword_5_0_q = new TokenAlias(false, true, grammarAccess.getVocSpecAccess().getEventDrivenSensorsKeyword_5_0());
+		match_VocSpec_PeriodicSensorsKeyword_4_0_q = new TokenAlias(false, true, grammarAccess.getVocSpecAccess().getPeriodicSensorsKeyword_4_0());
+		match_VocSpec_RequestBasedSensorsKeyword_6_0_q = new TokenAlias(false, true, grammarAccess.getVocSpecAccess().getRequestBasedSensorsKeyword_6_0());
+		match_VocSpec_StoragesKeyword_9_0_q = new TokenAlias(false, true, grammarAccess.getVocSpecAccess().getStoragesKeyword_9_0());
+		match_VocSpec_TagsKeyword_7_0_q = new TokenAlias(false, true, grammarAccess.getVocSpecAccess().getTagsKeyword_7_0());
 	}
 	
 	@Override
@@ -100,38 +85,24 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_EventConditions___EqualsSignKeyword_1_2_or_GreaterThanSignKeyword_1_0_or_LessThanSignKeyword_1_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_InteractionSpec_ResourcesKeyword_1_a.equals(syntax))
 				emit_InteractionSpec_ResourcesKeyword_1_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_InteractionSpec_ResourcesKeyword_1_p.equals(syntax))
+				emit_InteractionSpec_ResourcesKeyword_1_p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_InteractionSpec_StructsKeyword_0_0_q.equals(syntax))
 				emit_InteractionSpec_StructsKeyword_0_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_InteractionSpec_UserInteractionsKeyword_2_0_a.equals(syntax))
-				emit_InteractionSpec_UserInteractionsKeyword_2_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_InteractionSpec_UserInteractionsKeyword_2_0_p.equals(syntax))
-				emit_InteractionSpec_UserInteractionsKeyword_2_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_InteractionSpec___UserInteractionsKeyword_2_0_p_or___ResourcesKeyword_1_p_UserInteractionsKeyword_2_0_p____q.equals(syntax))
-				emit_InteractionSpec___UserInteractionsKeyword_2_0_p_or___ResourcesKeyword_1_p_UserInteractionsKeyword_2_0_p____q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_VocSpec_ActuatorsKeyword_8_0_a.equals(syntax))
-				emit_VocSpec_ActuatorsKeyword_8_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_VocSpec_ActuatorsKeyword_8_0_p.equals(syntax))
-				emit_VocSpec_ActuatorsKeyword_8_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_VocSpec_EventDrivenSensorsKeyword_5_0_a.equals(syntax))
-				emit_VocSpec_EventDrivenSensorsKeyword_5_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_VocSpec_EventDrivenSensorsKeyword_5_0_p.equals(syntax))
-				emit_VocSpec_EventDrivenSensorsKeyword_5_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_VocSpec_PeriodicSensorsKeyword_4_0_a.equals(syntax))
-				emit_VocSpec_PeriodicSensorsKeyword_4_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_VocSpec_PeriodicSensorsKeyword_4_0_p.equals(syntax))
-				emit_VocSpec_PeriodicSensorsKeyword_4_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_VocSpec_RequestBasedSensorsKeyword_6_0_a.equals(syntax))
-				emit_VocSpec_RequestBasedSensorsKeyword_6_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_VocSpec_RequestBasedSensorsKeyword_6_0_p.equals(syntax))
-				emit_VocSpec_RequestBasedSensorsKeyword_6_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_VocSpec_StoragesKeyword_9_0_a.equals(syntax))
-				emit_VocSpec_StoragesKeyword_9_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_VocSpec_StoragesKeyword_9_0_p.equals(syntax))
-				emit_VocSpec_StoragesKeyword_9_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_VocSpec_TagsKeyword_7_0_a.equals(syntax))
-				emit_VocSpec_TagsKeyword_7_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_VocSpec_TagsKeyword_7_0_p.equals(syntax))
-				emit_VocSpec_TagsKeyword_7_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_InteractionSpec_UserInteractionsKeyword_2_0_q.equals(syntax))
+				emit_InteractionSpec_UserInteractionsKeyword_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_VocSpec_ActuatorsKeyword_8_0_q.equals(syntax))
+				emit_VocSpec_ActuatorsKeyword_8_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_VocSpec_EventDrivenSensorsKeyword_5_0_q.equals(syntax))
+				emit_VocSpec_EventDrivenSensorsKeyword_5_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_VocSpec_PeriodicSensorsKeyword_4_0_q.equals(syntax))
+				emit_VocSpec_PeriodicSensorsKeyword_4_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_VocSpec_RequestBasedSensorsKeyword_6_0_q.equals(syntax))
+				emit_VocSpec_RequestBasedSensorsKeyword_6_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_VocSpec_StoragesKeyword_9_0_q.equals(syntax))
+				emit_VocSpec_StoragesKeyword_9_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_VocSpec_TagsKeyword_7_0_q.equals(syntax))
+				emit_VocSpec_TagsKeyword_7_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -220,12 +191,23 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     'resources:'*
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) 'userInteractions:'* (rule start)
-	 *     (rule start) (ambiguity) 'userInteractions:'+ interactionName+=InteractionName
-	 *     structs+=Struct (ambiguity) 'userInteractions:'* (rule end)
-	 *     structs+=Struct (ambiguity) 'userInteractions:'+ interactionName+=InteractionName
+	 *     (rule start) (ambiguity) 'userInteractions:' interactionName+=InteractionName
+	 *     (rule start) (ambiguity) (rule start)
+	 *     structs+=Struct (ambiguity) 'userInteractions:' interactionName+=InteractionName
+	 *     structs+=Struct (ambiguity) (rule end)
 	 */
 	protected void emit_InteractionSpec_ResourcesKeyword_1_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'resources:'+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) (rule start)
+	 */
+	protected void emit_InteractionSpec_ResourcesKeyword_1_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -242,289 +224,78 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     'userInteractions:'*
+	 *     'userInteractions:'?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) 'resources:'* (ambiguity) (rule start)
-	 *     interactionName+=InteractionName (ambiguity) (rule end)
 	 *     interactionName+=InteractionName (ambiguity) interactionName+=InteractionName
-	 *     structs+=Struct 'resources:'* (ambiguity) (rule end)
 	 */
-	protected void emit_InteractionSpec_UserInteractionsKeyword_2_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_InteractionSpec_UserInteractionsKeyword_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Ambiguous syntax:
-	 *     'userInteractions:'+
+	 *     'actuators:'?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) 'resources:'* (ambiguity) interactionName+=InteractionName
-	 *     structs+=Struct 'resources:'* (ambiguity) interactionName+=InteractionName
-	 */
-	protected void emit_InteractionSpec_UserInteractionsKeyword_2_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     (('resources:'+ 'userInteractions:'+) | 'userInteractions:'+)?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) (rule start)
-	 */
-	protected void emit_InteractionSpec___UserInteractionsKeyword_2_0_p_or___ResourcesKeyword_1_p_UserInteractionsKeyword_2_0_p____q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     'actuators:'*
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) 'structs:' 'resources:' 'sensors:' 'periodicSensors:'* 'eventDrivenSensors:'* 'requestBasedSensors:'* 'tags:'* (ambiguity) 'storages:'* (rule start)
-	 *     (rule start) 'structs:' 'resources:' 'sensors:' 'periodicSensors:'* 'eventDrivenSensors:'* 'requestBasedSensors:'* 'tags:'* (ambiguity) 'storages:'+ storageService+=StorageService
-	 *     actuators+=Actuator (ambiguity) 'storages:'* (rule end)
-	 *     actuators+=Actuator (ambiguity) 'storages:'+ storageService+=StorageService
 	 *     actuators+=Actuator (ambiguity) actuators+=Actuator
-	 *     eventSensors+=EventSensors 'eventDrivenSensors:'* 'requestBasedSensors:'* 'tags:'* (ambiguity) 'storages:'* (rule end)
-	 *     eventSensors+=EventSensors 'eventDrivenSensors:'* 'requestBasedSensors:'* 'tags:'* (ambiguity) 'storages:'+ storageService+=StorageService
-	 *     periodicSensors+=PeriodicSensors 'periodicSensors:'* 'eventDrivenSensors:'* 'requestBasedSensors:'* 'tags:'* (ambiguity) 'storages:'* (rule end)
-	 *     periodicSensors+=PeriodicSensors 'periodicSensors:'* 'eventDrivenSensors:'* 'requestBasedSensors:'* 'tags:'* (ambiguity) 'storages:'+ storageService+=StorageService
-	 *     requestSensors+=RequestSensors 'requestBasedSensors:'* 'tags:'* (ambiguity) 'storages:'* (rule end)
-	 *     requestSensors+=RequestSensors 'requestBasedSensors:'* 'tags:'* (ambiguity) 'storages:'+ storageService+=StorageService
-	 *     structs+=Struct 'resources:' 'sensors:' 'periodicSensors:'* 'eventDrivenSensors:'* 'requestBasedSensors:'* 'tags:'* (ambiguity) 'storages:'* (rule end)
-	 *     structs+=Struct 'resources:' 'sensors:' 'periodicSensors:'* 'eventDrivenSensors:'* 'requestBasedSensors:'* 'tags:'* (ambiguity) 'storages:'+ storageService+=StorageService
-	 *     tags+=Tags 'tags:'* (ambiguity) 'storages:'* (rule end)
-	 *     tags+=Tags 'tags:'* (ambiguity) 'storages:'+ storageService+=StorageService
 	 */
-	protected void emit_VocSpec_ActuatorsKeyword_8_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_VocSpec_ActuatorsKeyword_8_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Ambiguous syntax:
-	 *     'actuators:'+
+	 *     'eventDrivenSensors:'?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) 'structs:' 'resources:' 'sensors:' 'periodicSensors:'* 'eventDrivenSensors:'* 'requestBasedSensors:'* 'tags:'* (ambiguity) actuators+=Actuator
-	 *     eventSensors+=EventSensors 'eventDrivenSensors:'* 'requestBasedSensors:'* 'tags:'* (ambiguity) actuators+=Actuator
-	 *     periodicSensors+=PeriodicSensors 'periodicSensors:'* 'eventDrivenSensors:'* 'requestBasedSensors:'* 'tags:'* (ambiguity) actuators+=Actuator
-	 *     requestSensors+=RequestSensors 'requestBasedSensors:'* 'tags:'* (ambiguity) actuators+=Actuator
-	 *     structs+=Struct 'resources:' 'sensors:' 'periodicSensors:'* 'eventDrivenSensors:'* 'requestBasedSensors:'* 'tags:'* (ambiguity) actuators+=Actuator
-	 *     tags+=Tags 'tags:'* (ambiguity) actuators+=Actuator
-	 */
-	protected void emit_VocSpec_ActuatorsKeyword_8_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     'eventDrivenSensors:'*
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) 'structs:' 'resources:' 'sensors:' 'periodicSensors:'* (ambiguity) 'requestBasedSensors:'* 'tags:'* 'actuators:'* 'storages:'* (rule start)
-	 *     (rule start) 'structs:' 'resources:' 'sensors:' 'periodicSensors:'* (ambiguity) 'requestBasedSensors:'* 'tags:'* 'actuators:'* 'storages:'+ storageService+=StorageService
-	 *     (rule start) 'structs:' 'resources:' 'sensors:' 'periodicSensors:'* (ambiguity) 'requestBasedSensors:'* 'tags:'* 'actuators:'+ actuators+=Actuator
-	 *     (rule start) 'structs:' 'resources:' 'sensors:' 'periodicSensors:'* (ambiguity) 'requestBasedSensors:'* 'tags:'+ tags+=Tags
-	 *     (rule start) 'structs:' 'resources:' 'sensors:' 'periodicSensors:'* (ambiguity) 'requestBasedSensors:'+ requestSensors+=RequestSensors
-	 *     eventSensors+=EventSensors (ambiguity) 'requestBasedSensors:'* 'tags:'* 'actuators:'* 'storages:'* (rule end)
-	 *     eventSensors+=EventSensors (ambiguity) 'requestBasedSensors:'* 'tags:'* 'actuators:'* 'storages:'+ storageService+=StorageService
-	 *     eventSensors+=EventSensors (ambiguity) 'requestBasedSensors:'* 'tags:'* 'actuators:'+ actuators+=Actuator
-	 *     eventSensors+=EventSensors (ambiguity) 'requestBasedSensors:'* 'tags:'+ tags+=Tags
-	 *     eventSensors+=EventSensors (ambiguity) 'requestBasedSensors:'+ requestSensors+=RequestSensors
 	 *     eventSensors+=EventSensors (ambiguity) eventSensors+=EventSensors
-	 *     periodicSensors+=PeriodicSensors 'periodicSensors:'* (ambiguity) 'requestBasedSensors:'* 'tags:'* 'actuators:'* 'storages:'* (rule end)
-	 *     periodicSensors+=PeriodicSensors 'periodicSensors:'* (ambiguity) 'requestBasedSensors:'* 'tags:'* 'actuators:'* 'storages:'+ storageService+=StorageService
-	 *     periodicSensors+=PeriodicSensors 'periodicSensors:'* (ambiguity) 'requestBasedSensors:'* 'tags:'* 'actuators:'+ actuators+=Actuator
-	 *     periodicSensors+=PeriodicSensors 'periodicSensors:'* (ambiguity) 'requestBasedSensors:'* 'tags:'+ tags+=Tags
-	 *     periodicSensors+=PeriodicSensors 'periodicSensors:'* (ambiguity) 'requestBasedSensors:'+ requestSensors+=RequestSensors
-	 *     structs+=Struct 'resources:' 'sensors:' 'periodicSensors:'* (ambiguity) 'requestBasedSensors:'* 'tags:'* 'actuators:'* 'storages:'* (rule end)
-	 *     structs+=Struct 'resources:' 'sensors:' 'periodicSensors:'* (ambiguity) 'requestBasedSensors:'* 'tags:'* 'actuators:'* 'storages:'+ storageService+=StorageService
-	 *     structs+=Struct 'resources:' 'sensors:' 'periodicSensors:'* (ambiguity) 'requestBasedSensors:'* 'tags:'* 'actuators:'+ actuators+=Actuator
-	 *     structs+=Struct 'resources:' 'sensors:' 'periodicSensors:'* (ambiguity) 'requestBasedSensors:'* 'tags:'+ tags+=Tags
-	 *     structs+=Struct 'resources:' 'sensors:' 'periodicSensors:'* (ambiguity) 'requestBasedSensors:'+ requestSensors+=RequestSensors
 	 */
-	protected void emit_VocSpec_EventDrivenSensorsKeyword_5_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_VocSpec_EventDrivenSensorsKeyword_5_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Ambiguous syntax:
-	 *     'eventDrivenSensors:'+
+	 *     'periodicSensors:'?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) 'structs:' 'resources:' 'sensors:' 'periodicSensors:'* (ambiguity) eventSensors+=EventSensors
-	 *     periodicSensors+=PeriodicSensors 'periodicSensors:'* (ambiguity) eventSensors+=EventSensors
-	 *     structs+=Struct 'resources:' 'sensors:' 'periodicSensors:'* (ambiguity) eventSensors+=EventSensors
-	 */
-	protected void emit_VocSpec_EventDrivenSensorsKeyword_5_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     'periodicSensors:'*
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) 'structs:' 'resources:' 'sensors:' (ambiguity) 'eventDrivenSensors:'* 'requestBasedSensors:'* 'tags:'* 'actuators:'* 'storages:'* (rule start)
-	 *     (rule start) 'structs:' 'resources:' 'sensors:' (ambiguity) 'eventDrivenSensors:'* 'requestBasedSensors:'* 'tags:'* 'actuators:'* 'storages:'+ storageService+=StorageService
-	 *     (rule start) 'structs:' 'resources:' 'sensors:' (ambiguity) 'eventDrivenSensors:'* 'requestBasedSensors:'* 'tags:'* 'actuators:'+ actuators+=Actuator
-	 *     (rule start) 'structs:' 'resources:' 'sensors:' (ambiguity) 'eventDrivenSensors:'* 'requestBasedSensors:'* 'tags:'+ tags+=Tags
-	 *     (rule start) 'structs:' 'resources:' 'sensors:' (ambiguity) 'eventDrivenSensors:'* 'requestBasedSensors:'+ requestSensors+=RequestSensors
-	 *     (rule start) 'structs:' 'resources:' 'sensors:' (ambiguity) 'eventDrivenSensors:'+ eventSensors+=EventSensors
-	 *     periodicSensors+=PeriodicSensors (ambiguity) 'eventDrivenSensors:'* 'requestBasedSensors:'* 'tags:'* 'actuators:'* 'storages:'* (rule end)
-	 *     periodicSensors+=PeriodicSensors (ambiguity) 'eventDrivenSensors:'* 'requestBasedSensors:'* 'tags:'* 'actuators:'* 'storages:'+ storageService+=StorageService
-	 *     periodicSensors+=PeriodicSensors (ambiguity) 'eventDrivenSensors:'* 'requestBasedSensors:'* 'tags:'* 'actuators:'+ actuators+=Actuator
-	 *     periodicSensors+=PeriodicSensors (ambiguity) 'eventDrivenSensors:'* 'requestBasedSensors:'* 'tags:'+ tags+=Tags
-	 *     periodicSensors+=PeriodicSensors (ambiguity) 'eventDrivenSensors:'* 'requestBasedSensors:'+ requestSensors+=RequestSensors
-	 *     periodicSensors+=PeriodicSensors (ambiguity) 'eventDrivenSensors:'+ eventSensors+=EventSensors
 	 *     periodicSensors+=PeriodicSensors (ambiguity) periodicSensors+=PeriodicSensors
-	 *     structs+=Struct 'resources:' 'sensors:' (ambiguity) 'eventDrivenSensors:'* 'requestBasedSensors:'* 'tags:'* 'actuators:'* 'storages:'* (rule end)
-	 *     structs+=Struct 'resources:' 'sensors:' (ambiguity) 'eventDrivenSensors:'* 'requestBasedSensors:'* 'tags:'* 'actuators:'* 'storages:'+ storageService+=StorageService
-	 *     structs+=Struct 'resources:' 'sensors:' (ambiguity) 'eventDrivenSensors:'* 'requestBasedSensors:'* 'tags:'* 'actuators:'+ actuators+=Actuator
-	 *     structs+=Struct 'resources:' 'sensors:' (ambiguity) 'eventDrivenSensors:'* 'requestBasedSensors:'* 'tags:'+ tags+=Tags
-	 *     structs+=Struct 'resources:' 'sensors:' (ambiguity) 'eventDrivenSensors:'* 'requestBasedSensors:'+ requestSensors+=RequestSensors
-	 *     structs+=Struct 'resources:' 'sensors:' (ambiguity) 'eventDrivenSensors:'+ eventSensors+=EventSensors
 	 */
-	protected void emit_VocSpec_PeriodicSensorsKeyword_4_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_VocSpec_PeriodicSensorsKeyword_4_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Ambiguous syntax:
-	 *     'periodicSensors:'+
+	 *     'requestBasedSensors:'?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) 'structs:' 'resources:' 'sensors:' (ambiguity) periodicSensors+=PeriodicSensors
-	 *     structs+=Struct 'resources:' 'sensors:' (ambiguity) periodicSensors+=PeriodicSensors
-	 */
-	protected void emit_VocSpec_PeriodicSensorsKeyword_4_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     'requestBasedSensors:'*
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) 'structs:' 'resources:' 'sensors:' 'periodicSensors:'* 'eventDrivenSensors:'* (ambiguity) 'tags:'* 'actuators:'* 'storages:'* (rule start)
-	 *     (rule start) 'structs:' 'resources:' 'sensors:' 'periodicSensors:'* 'eventDrivenSensors:'* (ambiguity) 'tags:'* 'actuators:'* 'storages:'+ storageService+=StorageService
-	 *     (rule start) 'structs:' 'resources:' 'sensors:' 'periodicSensors:'* 'eventDrivenSensors:'* (ambiguity) 'tags:'* 'actuators:'+ actuators+=Actuator
-	 *     (rule start) 'structs:' 'resources:' 'sensors:' 'periodicSensors:'* 'eventDrivenSensors:'* (ambiguity) 'tags:'+ tags+=Tags
-	 *     eventSensors+=EventSensors 'eventDrivenSensors:'* (ambiguity) 'tags:'* 'actuators:'* 'storages:'* (rule end)
-	 *     eventSensors+=EventSensors 'eventDrivenSensors:'* (ambiguity) 'tags:'* 'actuators:'* 'storages:'+ storageService+=StorageService
-	 *     eventSensors+=EventSensors 'eventDrivenSensors:'* (ambiguity) 'tags:'* 'actuators:'+ actuators+=Actuator
-	 *     eventSensors+=EventSensors 'eventDrivenSensors:'* (ambiguity) 'tags:'+ tags+=Tags
-	 *     periodicSensors+=PeriodicSensors 'periodicSensors:'* 'eventDrivenSensors:'* (ambiguity) 'tags:'* 'actuators:'* 'storages:'* (rule end)
-	 *     periodicSensors+=PeriodicSensors 'periodicSensors:'* 'eventDrivenSensors:'* (ambiguity) 'tags:'* 'actuators:'* 'storages:'+ storageService+=StorageService
-	 *     periodicSensors+=PeriodicSensors 'periodicSensors:'* 'eventDrivenSensors:'* (ambiguity) 'tags:'* 'actuators:'+ actuators+=Actuator
-	 *     periodicSensors+=PeriodicSensors 'periodicSensors:'* 'eventDrivenSensors:'* (ambiguity) 'tags:'+ tags+=Tags
-	 *     requestSensors+=RequestSensors (ambiguity) 'tags:'* 'actuators:'* 'storages:'* (rule end)
-	 *     requestSensors+=RequestSensors (ambiguity) 'tags:'* 'actuators:'* 'storages:'+ storageService+=StorageService
-	 *     requestSensors+=RequestSensors (ambiguity) 'tags:'* 'actuators:'+ actuators+=Actuator
-	 *     requestSensors+=RequestSensors (ambiguity) 'tags:'+ tags+=Tags
 	 *     requestSensors+=RequestSensors (ambiguity) requestSensors+=RequestSensors
-	 *     structs+=Struct 'resources:' 'sensors:' 'periodicSensors:'* 'eventDrivenSensors:'* (ambiguity) 'tags:'* 'actuators:'* 'storages:'* (rule end)
-	 *     structs+=Struct 'resources:' 'sensors:' 'periodicSensors:'* 'eventDrivenSensors:'* (ambiguity) 'tags:'* 'actuators:'* 'storages:'+ storageService+=StorageService
-	 *     structs+=Struct 'resources:' 'sensors:' 'periodicSensors:'* 'eventDrivenSensors:'* (ambiguity) 'tags:'* 'actuators:'+ actuators+=Actuator
-	 *     structs+=Struct 'resources:' 'sensors:' 'periodicSensors:'* 'eventDrivenSensors:'* (ambiguity) 'tags:'+ tags+=Tags
 	 */
-	protected void emit_VocSpec_RequestBasedSensorsKeyword_6_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_VocSpec_RequestBasedSensorsKeyword_6_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Ambiguous syntax:
-	 *     'requestBasedSensors:'+
+	 *     'storages:'?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) 'structs:' 'resources:' 'sensors:' 'periodicSensors:'* 'eventDrivenSensors:'* (ambiguity) requestSensors+=RequestSensors
-	 *     eventSensors+=EventSensors 'eventDrivenSensors:'* (ambiguity) requestSensors+=RequestSensors
-	 *     periodicSensors+=PeriodicSensors 'periodicSensors:'* 'eventDrivenSensors:'* (ambiguity) requestSensors+=RequestSensors
-	 *     structs+=Struct 'resources:' 'sensors:' 'periodicSensors:'* 'eventDrivenSensors:'* (ambiguity) requestSensors+=RequestSensors
-	 */
-	protected void emit_VocSpec_RequestBasedSensorsKeyword_6_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     'storages:'*
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) 'structs:' 'resources:' 'sensors:' 'periodicSensors:'* 'eventDrivenSensors:'* 'requestBasedSensors:'* 'tags:'* 'actuators:'* (ambiguity) (rule start)
-	 *     actuators+=Actuator 'actuators:'* (ambiguity) (rule end)
-	 *     eventSensors+=EventSensors 'eventDrivenSensors:'* 'requestBasedSensors:'* 'tags:'* 'actuators:'* (ambiguity) (rule end)
-	 *     periodicSensors+=PeriodicSensors 'periodicSensors:'* 'eventDrivenSensors:'* 'requestBasedSensors:'* 'tags:'* 'actuators:'* (ambiguity) (rule end)
-	 *     requestSensors+=RequestSensors 'requestBasedSensors:'* 'tags:'* 'actuators:'* (ambiguity) (rule end)
-	 *     storageService+=StorageService (ambiguity) (rule end)
 	 *     storageService+=StorageService (ambiguity) storageService+=StorageService
-	 *     structs+=Struct 'resources:' 'sensors:' 'periodicSensors:'* 'eventDrivenSensors:'* 'requestBasedSensors:'* 'tags:'* 'actuators:'* (ambiguity) (rule end)
-	 *     tags+=Tags 'tags:'* 'actuators:'* (ambiguity) (rule end)
 	 */
-	protected void emit_VocSpec_StoragesKeyword_9_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_VocSpec_StoragesKeyword_9_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Ambiguous syntax:
-	 *     'storages:'+
+	 *     'tags:'?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) 'structs:' 'resources:' 'sensors:' 'periodicSensors:'* 'eventDrivenSensors:'* 'requestBasedSensors:'* 'tags:'* 'actuators:'* (ambiguity) storageService+=StorageService
-	 *     actuators+=Actuator 'actuators:'* (ambiguity) storageService+=StorageService
-	 *     eventSensors+=EventSensors 'eventDrivenSensors:'* 'requestBasedSensors:'* 'tags:'* 'actuators:'* (ambiguity) storageService+=StorageService
-	 *     periodicSensors+=PeriodicSensors 'periodicSensors:'* 'eventDrivenSensors:'* 'requestBasedSensors:'* 'tags:'* 'actuators:'* (ambiguity) storageService+=StorageService
-	 *     requestSensors+=RequestSensors 'requestBasedSensors:'* 'tags:'* 'actuators:'* (ambiguity) storageService+=StorageService
-	 *     structs+=Struct 'resources:' 'sensors:' 'periodicSensors:'* 'eventDrivenSensors:'* 'requestBasedSensors:'* 'tags:'* 'actuators:'* (ambiguity) storageService+=StorageService
-	 *     tags+=Tags 'tags:'* 'actuators:'* (ambiguity) storageService+=StorageService
-	 */
-	protected void emit_VocSpec_StoragesKeyword_9_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     'tags:'*
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) 'structs:' 'resources:' 'sensors:' 'periodicSensors:'* 'eventDrivenSensors:'* 'requestBasedSensors:'* (ambiguity) 'actuators:'* 'storages:'* (rule start)
-	 *     (rule start) 'structs:' 'resources:' 'sensors:' 'periodicSensors:'* 'eventDrivenSensors:'* 'requestBasedSensors:'* (ambiguity) 'actuators:'* 'storages:'+ storageService+=StorageService
-	 *     (rule start) 'structs:' 'resources:' 'sensors:' 'periodicSensors:'* 'eventDrivenSensors:'* 'requestBasedSensors:'* (ambiguity) 'actuators:'+ actuators+=Actuator
-	 *     eventSensors+=EventSensors 'eventDrivenSensors:'* 'requestBasedSensors:'* (ambiguity) 'actuators:'* 'storages:'* (rule end)
-	 *     eventSensors+=EventSensors 'eventDrivenSensors:'* 'requestBasedSensors:'* (ambiguity) 'actuators:'* 'storages:'+ storageService+=StorageService
-	 *     eventSensors+=EventSensors 'eventDrivenSensors:'* 'requestBasedSensors:'* (ambiguity) 'actuators:'+ actuators+=Actuator
-	 *     periodicSensors+=PeriodicSensors 'periodicSensors:'* 'eventDrivenSensors:'* 'requestBasedSensors:'* (ambiguity) 'actuators:'* 'storages:'* (rule end)
-	 *     periodicSensors+=PeriodicSensors 'periodicSensors:'* 'eventDrivenSensors:'* 'requestBasedSensors:'* (ambiguity) 'actuators:'* 'storages:'+ storageService+=StorageService
-	 *     periodicSensors+=PeriodicSensors 'periodicSensors:'* 'eventDrivenSensors:'* 'requestBasedSensors:'* (ambiguity) 'actuators:'+ actuators+=Actuator
-	 *     requestSensors+=RequestSensors 'requestBasedSensors:'* (ambiguity) 'actuators:'* 'storages:'* (rule end)
-	 *     requestSensors+=RequestSensors 'requestBasedSensors:'* (ambiguity) 'actuators:'* 'storages:'+ storageService+=StorageService
-	 *     requestSensors+=RequestSensors 'requestBasedSensors:'* (ambiguity) 'actuators:'+ actuators+=Actuator
-	 *     structs+=Struct 'resources:' 'sensors:' 'periodicSensors:'* 'eventDrivenSensors:'* 'requestBasedSensors:'* (ambiguity) 'actuators:'* 'storages:'* (rule end)
-	 *     structs+=Struct 'resources:' 'sensors:' 'periodicSensors:'* 'eventDrivenSensors:'* 'requestBasedSensors:'* (ambiguity) 'actuators:'* 'storages:'+ storageService+=StorageService
-	 *     structs+=Struct 'resources:' 'sensors:' 'periodicSensors:'* 'eventDrivenSensors:'* 'requestBasedSensors:'* (ambiguity) 'actuators:'+ actuators+=Actuator
-	 *     tags+=Tags (ambiguity) 'actuators:'* 'storages:'* (rule end)
-	 *     tags+=Tags (ambiguity) 'actuators:'* 'storages:'+ storageService+=StorageService
-	 *     tags+=Tags (ambiguity) 'actuators:'+ actuators+=Actuator
 	 *     tags+=Tags (ambiguity) tags+=Tags
 	 */
-	protected void emit_VocSpec_TagsKeyword_7_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     'tags:'+
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) 'structs:' 'resources:' 'sensors:' 'periodicSensors:'* 'eventDrivenSensors:'* 'requestBasedSensors:'* (ambiguity) tags+=Tags
-	 *     eventSensors+=EventSensors 'eventDrivenSensors:'* 'requestBasedSensors:'* (ambiguity) tags+=Tags
-	 *     periodicSensors+=PeriodicSensors 'periodicSensors:'* 'eventDrivenSensors:'* 'requestBasedSensors:'* (ambiguity) tags+=Tags
-	 *     requestSensors+=RequestSensors 'requestBasedSensors:'* (ambiguity) tags+=Tags
-	 *     structs+=Struct 'resources:' 'sensors:' 'periodicSensors:'* 'eventDrivenSensors:'* 'requestBasedSensors:'* (ambiguity) tags+=Tags
-	 */
-	protected void emit_VocSpec_TagsKeyword_7_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_VocSpec_TagsKeyword_7_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

@@ -388,10 +388,10 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//InteractionSpec:
 		//	('structs:' structs+=Struct+)*
-		//	'resources:'* ('userInteractions:' interactionName+=InteractionName*)*;
+		//	'resources:'* ('userInteractions:' interactionName+=InteractionName+)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('structs:' structs+=Struct+)* 'resources:'* ('userInteractions:' interactionName+=InteractionName*)*
+		//('structs:' structs+=Struct+)* 'resources:'* ('userInteractions:' interactionName+=InteractionName+)*
 		public Group getGroup() { return cGroup; }
 		
 		//('structs:' structs+=Struct+)*
@@ -409,13 +409,13 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'resources:'*
 		public Keyword getResourcesKeyword_1() { return cResourcesKeyword_1; }
 		
-		//('userInteractions:' interactionName+=InteractionName*)*
+		//('userInteractions:' interactionName+=InteractionName+)*
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//'userInteractions:'
 		public Keyword getUserInteractionsKeyword_2_0() { return cUserInteractionsKeyword_2_0; }
 		
-		//interactionName+=InteractionName*
+		//interactionName+=InteractionName+
 		public Assignment getInteractionNameAssignment_2_1() { return cInteractionNameAssignment_2_1; }
 		
 		//InteractionName
@@ -1028,14 +1028,14 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//VocSpec:
 		//	'structs:' structs+=Struct*
 		//	'resources:'
-		//	'sensors:' ('periodicSensors:' periodicSensors+=PeriodicSensors*)* ('eventDrivenSensors:'
-		//	eventSensors+=EventSensors*)* ('requestBasedSensors:' requestSensors+=RequestSensors*)* ('tags:' tags+=Tags*)*
-		//	('actuators:' actuators+=Actuator*)* ('storages:' storageService+=StorageService*)*;
+		//	'sensors:' ('periodicSensors:' periodicSensors+=PeriodicSensors+)* ('eventDrivenSensors:'
+		//	eventSensors+=EventSensors+)* ('requestBasedSensors:' requestSensors+=RequestSensors+)* ('tags:' tags+=Tags+)*
+		//	('actuators:' actuators+=Actuator+)* ('storages:' storageService+=StorageService+)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'structs:' structs+=Struct* 'resources:' 'sensors:' ('periodicSensors:' periodicSensors+=PeriodicSensors*)*
-		//('eventDrivenSensors:' eventSensors+=EventSensors*)* ('requestBasedSensors:' requestSensors+=RequestSensors*)*
-		//('tags:' tags+=Tags*)* ('actuators:' actuators+=Actuator*)* ('storages:' storageService+=StorageService*)*
+		//'structs:' structs+=Struct* 'resources:' 'sensors:' ('periodicSensors:' periodicSensors+=PeriodicSensors+)*
+		//('eventDrivenSensors:' eventSensors+=EventSensors+)* ('requestBasedSensors:' requestSensors+=RequestSensors+)*
+		//('tags:' tags+=Tags+)* ('actuators:' actuators+=Actuator+)* ('storages:' storageService+=StorageService+)*
 		public Group getGroup() { return cGroup; }
 		
 		//'structs:'
@@ -1053,73 +1053,73 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'sensors:'
 		public Keyword getSensorsKeyword_3() { return cSensorsKeyword_3; }
 		
-		//('periodicSensors:' periodicSensors+=PeriodicSensors*)*
+		//('periodicSensors:' periodicSensors+=PeriodicSensors+)*
 		public Group getGroup_4() { return cGroup_4; }
 		
 		//'periodicSensors:'
 		public Keyword getPeriodicSensorsKeyword_4_0() { return cPeriodicSensorsKeyword_4_0; }
 		
-		//periodicSensors+=PeriodicSensors*
+		//periodicSensors+=PeriodicSensors+
 		public Assignment getPeriodicSensorsAssignment_4_1() { return cPeriodicSensorsAssignment_4_1; }
 		
 		//PeriodicSensors
 		public RuleCall getPeriodicSensorsPeriodicSensorsParserRuleCall_4_1_0() { return cPeriodicSensorsPeriodicSensorsParserRuleCall_4_1_0; }
 		
-		//('eventDrivenSensors:' eventSensors+=EventSensors*)*
+		//('eventDrivenSensors:' eventSensors+=EventSensors+)*
 		public Group getGroup_5() { return cGroup_5; }
 		
 		//'eventDrivenSensors:'
 		public Keyword getEventDrivenSensorsKeyword_5_0() { return cEventDrivenSensorsKeyword_5_0; }
 		
-		//eventSensors+=EventSensors*
+		//eventSensors+=EventSensors+
 		public Assignment getEventSensorsAssignment_5_1() { return cEventSensorsAssignment_5_1; }
 		
 		//EventSensors
 		public RuleCall getEventSensorsEventSensorsParserRuleCall_5_1_0() { return cEventSensorsEventSensorsParserRuleCall_5_1_0; }
 		
-		//('requestBasedSensors:' requestSensors+=RequestSensors*)*
+		//('requestBasedSensors:' requestSensors+=RequestSensors+)*
 		public Group getGroup_6() { return cGroup_6; }
 		
 		//'requestBasedSensors:'
 		public Keyword getRequestBasedSensorsKeyword_6_0() { return cRequestBasedSensorsKeyword_6_0; }
 		
-		//requestSensors+=RequestSensors*
+		//requestSensors+=RequestSensors+
 		public Assignment getRequestSensorsAssignment_6_1() { return cRequestSensorsAssignment_6_1; }
 		
 		//RequestSensors
 		public RuleCall getRequestSensorsRequestSensorsParserRuleCall_6_1_0() { return cRequestSensorsRequestSensorsParserRuleCall_6_1_0; }
 		
-		//('tags:' tags+=Tags*)*
+		//('tags:' tags+=Tags+)*
 		public Group getGroup_7() { return cGroup_7; }
 		
 		//'tags:'
 		public Keyword getTagsKeyword_7_0() { return cTagsKeyword_7_0; }
 		
-		//tags+=Tags*
+		//tags+=Tags+
 		public Assignment getTagsAssignment_7_1() { return cTagsAssignment_7_1; }
 		
 		//Tags
 		public RuleCall getTagsTagsParserRuleCall_7_1_0() { return cTagsTagsParserRuleCall_7_1_0; }
 		
-		//('actuators:' actuators+=Actuator*)*
+		//('actuators:' actuators+=Actuator+)*
 		public Group getGroup_8() { return cGroup_8; }
 		
 		//'actuators:'
 		public Keyword getActuatorsKeyword_8_0() { return cActuatorsKeyword_8_0; }
 		
-		//actuators+=Actuator*
+		//actuators+=Actuator+
 		public Assignment getActuatorsAssignment_8_1() { return cActuatorsAssignment_8_1; }
 		
 		//Actuator
 		public RuleCall getActuatorsActuatorParserRuleCall_8_1_0() { return cActuatorsActuatorParserRuleCall_8_1_0; }
 		
-		//('storages:' storageService+=StorageService*)*
+		//('storages:' storageService+=StorageService+)*
 		public Group getGroup_9() { return cGroup_9; }
 		
 		//'storages:'
 		public Keyword getStoragesKeyword_9_0() { return cStoragesKeyword_9_0; }
 		
-		//storageService+=StorageService*
+		//storageService+=StorageService+
 		public Assignment getStorageServiceAssignment_9_1() { return cStorageServiceAssignment_9_1; }
 		
 		//StorageService
@@ -1547,6 +1547,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTypeTypeParserRuleCall_3_0 = (RuleCall)cTypeAssignment_3.eContents().get(0);
 		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
+		////(name=ID|name = 'EndUserApp' | name = 'DashBoard'); 
 		////EntityName:  (name = ID | name = 'EndUserApp' | name = 'DashBoard')  ;
 		//Generate:
 		//	'generate' sourceName=SourceName ':' type=Type ';';
@@ -2269,7 +2270,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//InteractionSpec:
 	//	('structs:' structs+=Struct+)*
-	//	'resources:'* ('userInteractions:' interactionName+=InteractionName*)*;
+	//	'resources:'* ('userInteractions:' interactionName+=InteractionName+)*;
 	public InteractionSpecElements getInteractionSpecAccess() {
 		return pInteractionSpec;
 	}
@@ -2404,9 +2405,9 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	//VocSpec:
 	//	'structs:' structs+=Struct*
 	//	'resources:'
-	//	'sensors:' ('periodicSensors:' periodicSensors+=PeriodicSensors*)* ('eventDrivenSensors:'
-	//	eventSensors+=EventSensors*)* ('requestBasedSensors:' requestSensors+=RequestSensors*)* ('tags:' tags+=Tags*)*
-	//	('actuators:' actuators+=Actuator*)* ('storages:' storageService+=StorageService*)*;
+	//	'sensors:' ('periodicSensors:' periodicSensors+=PeriodicSensors+)* ('eventDrivenSensors:'
+	//	eventSensors+=EventSensors+)* ('requestBasedSensors:' requestSensors+=RequestSensors+)* ('tags:' tags+=Tags+)*
+	//	('actuators:' actuators+=Actuator+)* ('storages:' storageService+=StorageService+)*;
 	public VocSpecElements getVocSpecAccess() {
 		return pVocSpec;
 	}
@@ -2561,6 +2562,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getEntityNameAccess().getRule();
 	}
 	
+	////(name=ID|name = 'EndUserApp' | name = 'DashBoard'); 
 	////EntityName:  (name = ID | name = 'EndUserApp' | name = 'DashBoard')  ;
 	//Generate:
 	//	'generate' sourceName=SourceName ':' type=Type ';';

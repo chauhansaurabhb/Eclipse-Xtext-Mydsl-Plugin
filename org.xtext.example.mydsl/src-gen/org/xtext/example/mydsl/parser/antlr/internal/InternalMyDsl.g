@@ -722,7 +722,7 @@ ruleInteractionSpec returns [EObject current=null]
 						afterParserOrEnumRuleCall();
 					}
 				)
-			)*
+			)+
 		)*
 	)
 ;
@@ -1679,7 +1679,7 @@ ruleVocSpec returns [EObject current=null]
 						afterParserOrEnumRuleCall();
 					}
 				)
-			)*
+			)+
 		)*
 		(
 			otherlv_6='eventDrivenSensors:'
@@ -1704,7 +1704,7 @@ ruleVocSpec returns [EObject current=null]
 						afterParserOrEnumRuleCall();
 					}
 				)
-			)*
+			)+
 		)*
 		(
 			otherlv_8='requestBasedSensors:'
@@ -1729,7 +1729,7 @@ ruleVocSpec returns [EObject current=null]
 						afterParserOrEnumRuleCall();
 					}
 				)
-			)*
+			)+
 		)*
 		(
 			otherlv_10='tags:'
@@ -1754,7 +1754,7 @@ ruleVocSpec returns [EObject current=null]
 						afterParserOrEnumRuleCall();
 					}
 				)
-			)*
+			)+
 		)*
 		(
 			otherlv_12='actuators:'
@@ -1779,7 +1779,7 @@ ruleVocSpec returns [EObject current=null]
 						afterParserOrEnumRuleCall();
 					}
 				)
-			)*
+			)+
 		)*
 		(
 			otherlv_14='storages:'
@@ -1804,7 +1804,7 @@ ruleVocSpec returns [EObject current=null]
 						afterParserOrEnumRuleCall();
 					}
 				)
-			)*
+			)+
 		)*
 	)
 ;

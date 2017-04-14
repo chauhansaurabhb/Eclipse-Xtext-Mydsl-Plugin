@@ -4,13 +4,13 @@ generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
 
 Model:
 	(vocSpec=VocSpec | interactionSpec=InteractionSpec | archSpec=ArchSpec | networkSpec=DeploymentSpec);
-
+ 
 DeploymentSpec:
 	 'devices:'
 	  (devices+=Device)*;	 
 
 Device:
-	deviceName= DeviceEntityName ':'
+	deviceName= DeviceEntityName ':' 
 	'location:' (deviceLocation+=DeviceLocation) ';'
 	'platform:' (platformType+=PlatformType) ';'
 	'resources:' (deviceAbilities+=DeviceAbilities)? ';'
@@ -35,16 +35,17 @@ DeviceProtocol:
 DeviceAbilities:
 	deviceEntityName=[EntityName] (',' name=DeviceAbilities)?;
 
-InteractionSpec:
-	('structs:' (structs+=Struct)+)*
+InteractionSpec: 
+    ('structs:' (structs+=Struct)+)*
 	('resources:')*
-	('userInteractions:' (interactionName+=InteractionName)*)*	
+	('userInteractions:' (interactionName+=InteractionName)+)*			
 	;
 
+ 
 InteractionName:
-	interactionName=EntityName
+	interactionName=EntityName 
 	 (interactionCommand+=Command)*
-	(interactionRequest+=Request)*
+	(interactionRequest+=Request)*  
 	(interactionNotify+=InteractionAction)*;
 
 InteractionAction:
@@ -89,18 +90,19 @@ CommandParameter:
 	name=[ParameterName] (',' parameter=CommandParameter)?;
 
 VocSpec:
-	'structs:' (structs+=Struct)*
-	'resources:'   
+	'structs:' (structs+=Struct)* 
+	'resources:' 
 	'sensors:'
-	('periodicSensors:' (periodicSensors+=PeriodicSensors)*)*
-	('eventDrivenSensors:' (eventSensors+=EventSensors)*)*
-	('requestBasedSensors:' (requestSensors+=RequestSensors)*)*
-	('tags:' (tags+=Tags)*)*
-	('actuators:' (actuators+=Actuator)*)*
-	('storages:' (storageService+=StorageService)*)* 
+	('periodicSensors:' (periodicSensors+=PeriodicSensors)+)*
+	('eventDrivenSensors:' (eventSensors+=EventSensors)+)*
+	('requestBasedSensors:' (requestSensors+=RequestSensors)+)*
+	('tags:' (tags+=Tags)+)*  
+	('actuators:' (actuators+=Actuator)+)*
+	('storages:' (storageService+=StorageService)+)* 	
 	;
+	
 
-	//Region: regionLabel = RegionLabel ':' regionType = Type ';';
+//Region: regionLabel = RegionLabel ':' regionType = Type ';';
 
 //RegionLabel: name = ID ;
 Struct:
@@ -169,10 +171,12 @@ DeviceEntityName:
 	(name=ID);
 
 StructEntityName:
-	(name=ID);
-
+	(name=ID);  
+  
 EntityName:
 	(name=ID);
+ 
+	//(name=ID|name = 'EndUserApp' | name = 'DashBoard'); 
 
 	//EntityName:  (name = ID | name = 'EndUserApp' | name = 'DashBoard')  ;
 Generate:

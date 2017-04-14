@@ -140,12 +140,12 @@ public class ComputationalServiceCompiler {
 		
 		
 		tempConsumeInfoForSensor.add(consumeInfoForSensor); 
-		 
+//		 System.out.println("consumeInfoForSensor"+consumeInfoForSensor);
 		tempConsumeInfoType = consumeInfoForSensor.get(0).getConsumeInfoType();		
-		
+//		System.out.println("tempConsumeInfo"+tempConsumeInfoType);
 		tempListofConsumeInfo.add(new TempConsumeInfo(variableName, tempConsumeInfoType, consumeInfoForSensor ));
-
-	/*	System.out.println("Variable Name is "+variableName+ " consumeinfo Type "+tempConsumeInfoType.toString()
+/*
+	System.out.println("Variable Name is "+variableName+ " consumeinfo Type "+tempConsumeInfoType.toString()
 			 + " consumeInfoSensor "+ consumeInfoForSensor.toString());*/
 		 
 

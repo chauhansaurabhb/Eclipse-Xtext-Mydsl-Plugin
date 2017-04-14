@@ -1632,7 +1632,7 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInteractionSpec"
-    // InternalMyDsl.g:663:1: ruleInteractionSpec returns [EObject current=null] : ( (otherlv_0= 'structs:' ( (lv_structs_1_0= ruleStruct ) )+ )* (otherlv_2= 'resources:' )* (otherlv_3= 'userInteractions:' ( (lv_interactionName_4_0= ruleInteractionName ) )* )* ) ;
+    // InternalMyDsl.g:663:1: ruleInteractionSpec returns [EObject current=null] : ( (otherlv_0= 'structs:' ( (lv_structs_1_0= ruleStruct ) )+ )* (otherlv_2= 'resources:' )* (otherlv_3= 'userInteractions:' ( (lv_interactionName_4_0= ruleInteractionName ) )+ )* ) ;
     public final EObject ruleInteractionSpec() throws RecognitionException {
         EObject current = null;
 
@@ -1648,11 +1648,11 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMyDsl.g:669:2: ( ( (otherlv_0= 'structs:' ( (lv_structs_1_0= ruleStruct ) )+ )* (otherlv_2= 'resources:' )* (otherlv_3= 'userInteractions:' ( (lv_interactionName_4_0= ruleInteractionName ) )* )* ) )
-            // InternalMyDsl.g:670:2: ( (otherlv_0= 'structs:' ( (lv_structs_1_0= ruleStruct ) )+ )* (otherlv_2= 'resources:' )* (otherlv_3= 'userInteractions:' ( (lv_interactionName_4_0= ruleInteractionName ) )* )* )
+            // InternalMyDsl.g:669:2: ( ( (otherlv_0= 'structs:' ( (lv_structs_1_0= ruleStruct ) )+ )* (otherlv_2= 'resources:' )* (otherlv_3= 'userInteractions:' ( (lv_interactionName_4_0= ruleInteractionName ) )+ )* ) )
+            // InternalMyDsl.g:670:2: ( (otherlv_0= 'structs:' ( (lv_structs_1_0= ruleStruct ) )+ )* (otherlv_2= 'resources:' )* (otherlv_3= 'userInteractions:' ( (lv_interactionName_4_0= ruleInteractionName ) )+ )* )
             {
-            // InternalMyDsl.g:670:2: ( (otherlv_0= 'structs:' ( (lv_structs_1_0= ruleStruct ) )+ )* (otherlv_2= 'resources:' )* (otherlv_3= 'userInteractions:' ( (lv_interactionName_4_0= ruleInteractionName ) )* )* )
-            // InternalMyDsl.g:671:3: (otherlv_0= 'structs:' ( (lv_structs_1_0= ruleStruct ) )+ )* (otherlv_2= 'resources:' )* (otherlv_3= 'userInteractions:' ( (lv_interactionName_4_0= ruleInteractionName ) )* )*
+            // InternalMyDsl.g:670:2: ( (otherlv_0= 'structs:' ( (lv_structs_1_0= ruleStruct ) )+ )* (otherlv_2= 'resources:' )* (otherlv_3= 'userInteractions:' ( (lv_interactionName_4_0= ruleInteractionName ) )+ )* )
+            // InternalMyDsl.g:671:3: (otherlv_0= 'structs:' ( (lv_structs_1_0= ruleStruct ) )+ )* (otherlv_2= 'resources:' )* (otherlv_3= 'userInteractions:' ( (lv_interactionName_4_0= ruleInteractionName ) )+ )*
             {
             // InternalMyDsl.g:671:3: (otherlv_0= 'structs:' ( (lv_structs_1_0= ruleStruct ) )+ )*
             loop9:
@@ -1764,7 +1764,7 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // InternalMyDsl.g:702:3: (otherlv_3= 'userInteractions:' ( (lv_interactionName_4_0= ruleInteractionName ) )* )*
+            // InternalMyDsl.g:702:3: (otherlv_3= 'userInteractions:' ( (lv_interactionName_4_0= ruleInteractionName ) )+ )*
             loop12:
             do {
                 int alt12=2;
@@ -1777,13 +1777,14 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
                 switch (alt12) {
             	case 1 :
-            	    // InternalMyDsl.g:703:4: otherlv_3= 'userInteractions:' ( (lv_interactionName_4_0= ruleInteractionName ) )*
+            	    // InternalMyDsl.g:703:4: otherlv_3= 'userInteractions:' ( (lv_interactionName_4_0= ruleInteractionName ) )+
             	    {
-            	    otherlv_3=(Token)match(input,28,FOLLOW_20); 
+            	    otherlv_3=(Token)match(input,28,FOLLOW_6); 
 
             	    				newLeafNode(otherlv_3, grammarAccess.getInteractionSpecAccess().getUserInteractionsKeyword_2_0());
             	    			
-            	    // InternalMyDsl.g:707:4: ( (lv_interactionName_4_0= ruleInteractionName ) )*
+            	    // InternalMyDsl.g:707:4: ( (lv_interactionName_4_0= ruleInteractionName ) )+
+            	    int cnt11=0;
             	    loop11:
             	    do {
             	        int alt11=2;
@@ -1828,8 +1829,12 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
             	    	    break;
 
             	    	default :
-            	    	    break loop11;
+            	    	    if ( cnt11 >= 1 ) break loop11;
+            	                EarlyExitException eee =
+            	                    new EarlyExitException(11, input);
+            	                throw eee;
             	        }
+            	        cnt11++;
             	    } while (true);
 
 
@@ -4193,7 +4198,7 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVocSpec"
-    // InternalMyDsl.g:1620:1: ruleVocSpec returns [EObject current=null] : (otherlv_0= 'structs:' ( (lv_structs_1_0= ruleStruct ) )* otherlv_2= 'resources:' otherlv_3= 'sensors:' (otherlv_4= 'periodicSensors:' ( (lv_periodicSensors_5_0= rulePeriodicSensors ) )* )* (otherlv_6= 'eventDrivenSensors:' ( (lv_eventSensors_7_0= ruleEventSensors ) )* )* (otherlv_8= 'requestBasedSensors:' ( (lv_requestSensors_9_0= ruleRequestSensors ) )* )* (otherlv_10= 'tags:' ( (lv_tags_11_0= ruleTags ) )* )* (otherlv_12= 'actuators:' ( (lv_actuators_13_0= ruleActuator ) )* )* (otherlv_14= 'storages:' ( (lv_storageService_15_0= ruleStorageService ) )* )* ) ;
+    // InternalMyDsl.g:1620:1: ruleVocSpec returns [EObject current=null] : (otherlv_0= 'structs:' ( (lv_structs_1_0= ruleStruct ) )* otherlv_2= 'resources:' otherlv_3= 'sensors:' (otherlv_4= 'periodicSensors:' ( (lv_periodicSensors_5_0= rulePeriodicSensors ) )+ )* (otherlv_6= 'eventDrivenSensors:' ( (lv_eventSensors_7_0= ruleEventSensors ) )+ )* (otherlv_8= 'requestBasedSensors:' ( (lv_requestSensors_9_0= ruleRequestSensors ) )+ )* (otherlv_10= 'tags:' ( (lv_tags_11_0= ruleTags ) )+ )* (otherlv_12= 'actuators:' ( (lv_actuators_13_0= ruleActuator ) )+ )* (otherlv_14= 'storages:' ( (lv_storageService_15_0= ruleStorageService ) )+ )* ) ;
     public final EObject ruleVocSpec() throws RecognitionException {
         EObject current = null;
 
@@ -4225,11 +4230,11 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMyDsl.g:1626:2: ( (otherlv_0= 'structs:' ( (lv_structs_1_0= ruleStruct ) )* otherlv_2= 'resources:' otherlv_3= 'sensors:' (otherlv_4= 'periodicSensors:' ( (lv_periodicSensors_5_0= rulePeriodicSensors ) )* )* (otherlv_6= 'eventDrivenSensors:' ( (lv_eventSensors_7_0= ruleEventSensors ) )* )* (otherlv_8= 'requestBasedSensors:' ( (lv_requestSensors_9_0= ruleRequestSensors ) )* )* (otherlv_10= 'tags:' ( (lv_tags_11_0= ruleTags ) )* )* (otherlv_12= 'actuators:' ( (lv_actuators_13_0= ruleActuator ) )* )* (otherlv_14= 'storages:' ( (lv_storageService_15_0= ruleStorageService ) )* )* ) )
-            // InternalMyDsl.g:1627:2: (otherlv_0= 'structs:' ( (lv_structs_1_0= ruleStruct ) )* otherlv_2= 'resources:' otherlv_3= 'sensors:' (otherlv_4= 'periodicSensors:' ( (lv_periodicSensors_5_0= rulePeriodicSensors ) )* )* (otherlv_6= 'eventDrivenSensors:' ( (lv_eventSensors_7_0= ruleEventSensors ) )* )* (otherlv_8= 'requestBasedSensors:' ( (lv_requestSensors_9_0= ruleRequestSensors ) )* )* (otherlv_10= 'tags:' ( (lv_tags_11_0= ruleTags ) )* )* (otherlv_12= 'actuators:' ( (lv_actuators_13_0= ruleActuator ) )* )* (otherlv_14= 'storages:' ( (lv_storageService_15_0= ruleStorageService ) )* )* )
+            // InternalMyDsl.g:1626:2: ( (otherlv_0= 'structs:' ( (lv_structs_1_0= ruleStruct ) )* otherlv_2= 'resources:' otherlv_3= 'sensors:' (otherlv_4= 'periodicSensors:' ( (lv_periodicSensors_5_0= rulePeriodicSensors ) )+ )* (otherlv_6= 'eventDrivenSensors:' ( (lv_eventSensors_7_0= ruleEventSensors ) )+ )* (otherlv_8= 'requestBasedSensors:' ( (lv_requestSensors_9_0= ruleRequestSensors ) )+ )* (otherlv_10= 'tags:' ( (lv_tags_11_0= ruleTags ) )+ )* (otherlv_12= 'actuators:' ( (lv_actuators_13_0= ruleActuator ) )+ )* (otherlv_14= 'storages:' ( (lv_storageService_15_0= ruleStorageService ) )+ )* ) )
+            // InternalMyDsl.g:1627:2: (otherlv_0= 'structs:' ( (lv_structs_1_0= ruleStruct ) )* otherlv_2= 'resources:' otherlv_3= 'sensors:' (otherlv_4= 'periodicSensors:' ( (lv_periodicSensors_5_0= rulePeriodicSensors ) )+ )* (otherlv_6= 'eventDrivenSensors:' ( (lv_eventSensors_7_0= ruleEventSensors ) )+ )* (otherlv_8= 'requestBasedSensors:' ( (lv_requestSensors_9_0= ruleRequestSensors ) )+ )* (otherlv_10= 'tags:' ( (lv_tags_11_0= ruleTags ) )+ )* (otherlv_12= 'actuators:' ( (lv_actuators_13_0= ruleActuator ) )+ )* (otherlv_14= 'storages:' ( (lv_storageService_15_0= ruleStorageService ) )+ )* )
             {
-            // InternalMyDsl.g:1627:2: (otherlv_0= 'structs:' ( (lv_structs_1_0= ruleStruct ) )* otherlv_2= 'resources:' otherlv_3= 'sensors:' (otherlv_4= 'periodicSensors:' ( (lv_periodicSensors_5_0= rulePeriodicSensors ) )* )* (otherlv_6= 'eventDrivenSensors:' ( (lv_eventSensors_7_0= ruleEventSensors ) )* )* (otherlv_8= 'requestBasedSensors:' ( (lv_requestSensors_9_0= ruleRequestSensors ) )* )* (otherlv_10= 'tags:' ( (lv_tags_11_0= ruleTags ) )* )* (otherlv_12= 'actuators:' ( (lv_actuators_13_0= ruleActuator ) )* )* (otherlv_14= 'storages:' ( (lv_storageService_15_0= ruleStorageService ) )* )* )
-            // InternalMyDsl.g:1628:3: otherlv_0= 'structs:' ( (lv_structs_1_0= ruleStruct ) )* otherlv_2= 'resources:' otherlv_3= 'sensors:' (otherlv_4= 'periodicSensors:' ( (lv_periodicSensors_5_0= rulePeriodicSensors ) )* )* (otherlv_6= 'eventDrivenSensors:' ( (lv_eventSensors_7_0= ruleEventSensors ) )* )* (otherlv_8= 'requestBasedSensors:' ( (lv_requestSensors_9_0= ruleRequestSensors ) )* )* (otherlv_10= 'tags:' ( (lv_tags_11_0= ruleTags ) )* )* (otherlv_12= 'actuators:' ( (lv_actuators_13_0= ruleActuator ) )* )* (otherlv_14= 'storages:' ( (lv_storageService_15_0= ruleStorageService ) )* )*
+            // InternalMyDsl.g:1627:2: (otherlv_0= 'structs:' ( (lv_structs_1_0= ruleStruct ) )* otherlv_2= 'resources:' otherlv_3= 'sensors:' (otherlv_4= 'periodicSensors:' ( (lv_periodicSensors_5_0= rulePeriodicSensors ) )+ )* (otherlv_6= 'eventDrivenSensors:' ( (lv_eventSensors_7_0= ruleEventSensors ) )+ )* (otherlv_8= 'requestBasedSensors:' ( (lv_requestSensors_9_0= ruleRequestSensors ) )+ )* (otherlv_10= 'tags:' ( (lv_tags_11_0= ruleTags ) )+ )* (otherlv_12= 'actuators:' ( (lv_actuators_13_0= ruleActuator ) )+ )* (otherlv_14= 'storages:' ( (lv_storageService_15_0= ruleStorageService ) )+ )* )
+            // InternalMyDsl.g:1628:3: otherlv_0= 'structs:' ( (lv_structs_1_0= ruleStruct ) )* otherlv_2= 'resources:' otherlv_3= 'sensors:' (otherlv_4= 'periodicSensors:' ( (lv_periodicSensors_5_0= rulePeriodicSensors ) )+ )* (otherlv_6= 'eventDrivenSensors:' ( (lv_eventSensors_7_0= ruleEventSensors ) )+ )* (otherlv_8= 'requestBasedSensors:' ( (lv_requestSensors_9_0= ruleRequestSensors ) )+ )* (otherlv_10= 'tags:' ( (lv_tags_11_0= ruleTags ) )+ )* (otherlv_12= 'actuators:' ( (lv_actuators_13_0= ruleActuator ) )+ )* (otherlv_14= 'storages:' ( (lv_storageService_15_0= ruleStorageService ) )+ )*
             {
             otherlv_0=(Token)match(input,27,FOLLOW_43); 
 
@@ -4292,7 +4297,7 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getVocSpecAccess().getSensorsKeyword_3());
             		
-            // InternalMyDsl.g:1659:3: (otherlv_4= 'periodicSensors:' ( (lv_periodicSensors_5_0= rulePeriodicSensors ) )* )*
+            // InternalMyDsl.g:1659:3: (otherlv_4= 'periodicSensors:' ( (lv_periodicSensors_5_0= rulePeriodicSensors ) )+ )*
             loop35:
             do {
                 int alt35=2;
@@ -4305,13 +4310,14 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
                 switch (alt35) {
             	case 1 :
-            	    // InternalMyDsl.g:1660:4: otherlv_4= 'periodicSensors:' ( (lv_periodicSensors_5_0= rulePeriodicSensors ) )*
+            	    // InternalMyDsl.g:1660:4: otherlv_4= 'periodicSensors:' ( (lv_periodicSensors_5_0= rulePeriodicSensors ) )+
             	    {
-            	    otherlv_4=(Token)match(input,42,FOLLOW_46); 
+            	    otherlv_4=(Token)match(input,42,FOLLOW_6); 
 
             	    				newLeafNode(otherlv_4, grammarAccess.getVocSpecAccess().getPeriodicSensorsKeyword_4_0());
             	    			
-            	    // InternalMyDsl.g:1664:4: ( (lv_periodicSensors_5_0= rulePeriodicSensors ) )*
+            	    // InternalMyDsl.g:1664:4: ( (lv_periodicSensors_5_0= rulePeriodicSensors ) )+
+            	    int cnt34=0;
             	    loop34:
             	    do {
             	        int alt34=2;
@@ -4356,8 +4362,12 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
             	    	    break;
 
             	    	default :
-            	    	    break loop34;
+            	    	    if ( cnt34 >= 1 ) break loop34;
+            	                EarlyExitException eee =
+            	                    new EarlyExitException(34, input);
+            	                throw eee;
             	        }
+            	        cnt34++;
             	    } while (true);
 
 
@@ -4369,7 +4379,7 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // InternalMyDsl.g:1684:3: (otherlv_6= 'eventDrivenSensors:' ( (lv_eventSensors_7_0= ruleEventSensors ) )* )*
+            // InternalMyDsl.g:1684:3: (otherlv_6= 'eventDrivenSensors:' ( (lv_eventSensors_7_0= ruleEventSensors ) )+ )*
             loop37:
             do {
                 int alt37=2;
@@ -4382,13 +4392,14 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
                 switch (alt37) {
             	case 1 :
-            	    // InternalMyDsl.g:1685:4: otherlv_6= 'eventDrivenSensors:' ( (lv_eventSensors_7_0= ruleEventSensors ) )*
+            	    // InternalMyDsl.g:1685:4: otherlv_6= 'eventDrivenSensors:' ( (lv_eventSensors_7_0= ruleEventSensors ) )+
             	    {
-            	    otherlv_6=(Token)match(input,43,FOLLOW_47); 
+            	    otherlv_6=(Token)match(input,43,FOLLOW_6); 
 
             	    				newLeafNode(otherlv_6, grammarAccess.getVocSpecAccess().getEventDrivenSensorsKeyword_5_0());
             	    			
-            	    // InternalMyDsl.g:1689:4: ( (lv_eventSensors_7_0= ruleEventSensors ) )*
+            	    // InternalMyDsl.g:1689:4: ( (lv_eventSensors_7_0= ruleEventSensors ) )+
+            	    int cnt36=0;
             	    loop36:
             	    do {
             	        int alt36=2;
@@ -4433,8 +4444,12 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
             	    	    break;
 
             	    	default :
-            	    	    break loop36;
+            	    	    if ( cnt36 >= 1 ) break loop36;
+            	                EarlyExitException eee =
+            	                    new EarlyExitException(36, input);
+            	                throw eee;
             	        }
+            	        cnt36++;
             	    } while (true);
 
 
@@ -4446,7 +4461,7 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // InternalMyDsl.g:1709:3: (otherlv_8= 'requestBasedSensors:' ( (lv_requestSensors_9_0= ruleRequestSensors ) )* )*
+            // InternalMyDsl.g:1709:3: (otherlv_8= 'requestBasedSensors:' ( (lv_requestSensors_9_0= ruleRequestSensors ) )+ )*
             loop39:
             do {
                 int alt39=2;
@@ -4459,13 +4474,14 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
                 switch (alt39) {
             	case 1 :
-            	    // InternalMyDsl.g:1710:4: otherlv_8= 'requestBasedSensors:' ( (lv_requestSensors_9_0= ruleRequestSensors ) )*
+            	    // InternalMyDsl.g:1710:4: otherlv_8= 'requestBasedSensors:' ( (lv_requestSensors_9_0= ruleRequestSensors ) )+
             	    {
-            	    otherlv_8=(Token)match(input,44,FOLLOW_48); 
+            	    otherlv_8=(Token)match(input,44,FOLLOW_6); 
 
             	    				newLeafNode(otherlv_8, grammarAccess.getVocSpecAccess().getRequestBasedSensorsKeyword_6_0());
             	    			
-            	    // InternalMyDsl.g:1714:4: ( (lv_requestSensors_9_0= ruleRequestSensors ) )*
+            	    // InternalMyDsl.g:1714:4: ( (lv_requestSensors_9_0= ruleRequestSensors ) )+
+            	    int cnt38=0;
             	    loop38:
             	    do {
             	        int alt38=2;
@@ -4510,8 +4526,12 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
             	    	    break;
 
             	    	default :
-            	    	    break loop38;
+            	    	    if ( cnt38 >= 1 ) break loop38;
+            	                EarlyExitException eee =
+            	                    new EarlyExitException(38, input);
+            	                throw eee;
             	        }
+            	        cnt38++;
             	    } while (true);
 
 
@@ -4523,7 +4543,7 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // InternalMyDsl.g:1734:3: (otherlv_10= 'tags:' ( (lv_tags_11_0= ruleTags ) )* )*
+            // InternalMyDsl.g:1734:3: (otherlv_10= 'tags:' ( (lv_tags_11_0= ruleTags ) )+ )*
             loop41:
             do {
                 int alt41=2;
@@ -4536,13 +4556,14 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
                 switch (alt41) {
             	case 1 :
-            	    // InternalMyDsl.g:1735:4: otherlv_10= 'tags:' ( (lv_tags_11_0= ruleTags ) )*
+            	    // InternalMyDsl.g:1735:4: otherlv_10= 'tags:' ( (lv_tags_11_0= ruleTags ) )+
             	    {
-            	    otherlv_10=(Token)match(input,45,FOLLOW_49); 
+            	    otherlv_10=(Token)match(input,45,FOLLOW_6); 
 
             	    				newLeafNode(otherlv_10, grammarAccess.getVocSpecAccess().getTagsKeyword_7_0());
             	    			
-            	    // InternalMyDsl.g:1739:4: ( (lv_tags_11_0= ruleTags ) )*
+            	    // InternalMyDsl.g:1739:4: ( (lv_tags_11_0= ruleTags ) )+
+            	    int cnt40=0;
             	    loop40:
             	    do {
             	        int alt40=2;
@@ -4587,8 +4608,12 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
             	    	    break;
 
             	    	default :
-            	    	    break loop40;
+            	    	    if ( cnt40 >= 1 ) break loop40;
+            	                EarlyExitException eee =
+            	                    new EarlyExitException(40, input);
+            	                throw eee;
             	        }
+            	        cnt40++;
             	    } while (true);
 
 
@@ -4600,7 +4625,7 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // InternalMyDsl.g:1759:3: (otherlv_12= 'actuators:' ( (lv_actuators_13_0= ruleActuator ) )* )*
+            // InternalMyDsl.g:1759:3: (otherlv_12= 'actuators:' ( (lv_actuators_13_0= ruleActuator ) )+ )*
             loop43:
             do {
                 int alt43=2;
@@ -4613,13 +4638,14 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
                 switch (alt43) {
             	case 1 :
-            	    // InternalMyDsl.g:1760:4: otherlv_12= 'actuators:' ( (lv_actuators_13_0= ruleActuator ) )*
+            	    // InternalMyDsl.g:1760:4: otherlv_12= 'actuators:' ( (lv_actuators_13_0= ruleActuator ) )+
             	    {
-            	    otherlv_12=(Token)match(input,46,FOLLOW_50); 
+            	    otherlv_12=(Token)match(input,46,FOLLOW_6); 
 
             	    				newLeafNode(otherlv_12, grammarAccess.getVocSpecAccess().getActuatorsKeyword_8_0());
             	    			
-            	    // InternalMyDsl.g:1764:4: ( (lv_actuators_13_0= ruleActuator ) )*
+            	    // InternalMyDsl.g:1764:4: ( (lv_actuators_13_0= ruleActuator ) )+
+            	    int cnt42=0;
             	    loop42:
             	    do {
             	        int alt42=2;
@@ -4664,8 +4690,12 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
             	    	    break;
 
             	    	default :
-            	    	    break loop42;
+            	    	    if ( cnt42 >= 1 ) break loop42;
+            	                EarlyExitException eee =
+            	                    new EarlyExitException(42, input);
+            	                throw eee;
             	        }
+            	        cnt42++;
             	    } while (true);
 
 
@@ -4677,7 +4707,7 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // InternalMyDsl.g:1784:3: (otherlv_14= 'storages:' ( (lv_storageService_15_0= ruleStorageService ) )* )*
+            // InternalMyDsl.g:1784:3: (otherlv_14= 'storages:' ( (lv_storageService_15_0= ruleStorageService ) )+ )*
             loop45:
             do {
                 int alt45=2;
@@ -4690,13 +4720,14 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
                 switch (alt45) {
             	case 1 :
-            	    // InternalMyDsl.g:1785:4: otherlv_14= 'storages:' ( (lv_storageService_15_0= ruleStorageService ) )*
+            	    // InternalMyDsl.g:1785:4: otherlv_14= 'storages:' ( (lv_storageService_15_0= ruleStorageService ) )+
             	    {
-            	    otherlv_14=(Token)match(input,47,FOLLOW_51); 
+            	    otherlv_14=(Token)match(input,47,FOLLOW_6); 
 
             	    				newLeafNode(otherlv_14, grammarAccess.getVocSpecAccess().getStoragesKeyword_9_0());
             	    			
-            	    // InternalMyDsl.g:1789:4: ( (lv_storageService_15_0= ruleStorageService ) )*
+            	    // InternalMyDsl.g:1789:4: ( (lv_storageService_15_0= ruleStorageService ) )+
+            	    int cnt44=0;
             	    loop44:
             	    do {
             	        int alt44=2;
@@ -4741,8 +4772,12 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
             	    	    break;
 
             	    	default :
-            	    	    break loop44;
+            	    	    if ( cnt44 >= 1 ) break loop44;
+            	                EarlyExitException eee =
+            	                    new EarlyExitException(44, input);
+            	                throw eee;
             	        }
+            	        cnt44++;
             	    } while (true);
 
 
@@ -8912,9 +8947,9 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
     protected DFA1 dfa1 = new DFA1(this);
     static final String dfa_1s = "\36\uffff";
-    static final String dfa_2s = "\1\2\16\uffff\1\2\2\uffff\1\2\11\uffff\1\2\1\uffff";
-    static final String dfa_3s = "\1\13\1\4\3\uffff\1\4\1\uffff\1\14\1\4\6\16\3\4\1\20\1\4\1\14\1\4\6\16\2\4";
-    static final String dfa_4s = "\1\41\1\20\3\uffff\1\4\1\uffff\1\14\1\104\6\16\1\41\1\4\1\14\1\51\1\4\1\14\1\104\6\16\1\41\1\14";
+    static final String dfa_2s = "\1\2\16\uffff\2\2\13\uffff\1\2\1\uffff";
+    static final String dfa_3s = "\1\13\1\4\3\uffff\1\4\1\uffff\1\14\1\4\6\16\1\4\1\20\3\4\1\14\1\4\6\16\2\4";
+    static final String dfa_4s = "\1\41\1\20\3\uffff\1\4\1\uffff\1\14\1\104\6\16\1\41\1\51\1\4\1\14\1\4\1\14\1\104\6\16\1\41\1\14";
     static final String dfa_5s = "\2\uffff\1\2\1\3\1\4\1\uffff\1\1\27\uffff";
     static final String dfa_6s = "\36\uffff}>";
     static final String[] dfa_7s = {
@@ -8933,10 +8968,10 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
             "\1\17",
             "\1\17",
             "\1\17",
-            "\1\21\13\uffff\1\22\12\uffff\1\20\1\2\4\uffff\1\3",
+            "\1\22\13\uffff\1\20\12\uffff\1\21\1\2\4\uffff\1\3",
+            "\1\2\13\uffff\1\2\14\uffff\1\6",
             "\1\23",
             "\1\7\7\uffff\1\10",
-            "\1\2\13\uffff\1\2\14\uffff\1\6",
             "\1\24",
             "\1\25",
             "\1\33\73\uffff\1\26\1\27\1\30\1\31\1\32",
@@ -8946,7 +8981,7 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
             "\1\34",
             "\1\34",
             "\1\34",
-            "\1\35\13\uffff\1\2\12\uffff\1\20\1\2\4\uffff\1\3",
+            "\1\35\13\uffff\1\2\12\uffff\1\21\1\2\4\uffff\1\3",
             "\1\24\7\uffff\1\25"
     };
 

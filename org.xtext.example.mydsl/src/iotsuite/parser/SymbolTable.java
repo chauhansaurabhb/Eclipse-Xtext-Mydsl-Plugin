@@ -60,7 +60,6 @@ public class SymbolTable {
 	public static ArrayList<String> eventDrivenFields = new ArrayList<String>();
 
 	public static List<String> periodicFieldName = new ArrayList<String>();
-	public static List<String> aggregatorFieldName = new ArrayList<String>();
 	public static List<String> eventDrivenFieldName = new ArrayList<String>();
 	public static Map<String, StructCompiler> structSymblTable = new HashMap<String, StructCompiler>();
 	public static Map<String, String> responseSymblTable = new HashMap<String, String>();
@@ -225,9 +224,7 @@ public class SymbolTable {
 								arrayFieldType[i][1]);
 						consumeInfo.add(consumeInfoFields);
 						consumeInfoForSensor.put(consumeInfoName, consumeInfo);
-						/*System.out.println("consumeInfoName "+ consumeInfoName + " Filed Name "+ arrayFieldName[i][1] +
-								" arrayFiledType "+arrayFieldType[i][1]); */
-						break;
+						// System.out.println("consumeInfo.....Map..."+consumeInfoForSensor);
 
 					} else {
 						ConsumeInfo consumeInfoFields = new ConsumeInfo(
@@ -237,18 +234,15 @@ public class SymbolTable {
 						consumeInfo.add(consumeInfoFields);
 						// System.out.println("consume Info List is..."+consumeInfoFields);
 						consumeInfoForSensor.put(consumeInfoName, consumeInfo);
-											
-						/*System.out.println("consumeInfoName "+ consumeInfoName + " Filed Name "+ arrayFieldName[i][1] +
-								" arrayFiledType "+arrayFieldType[i][1]); */
 						// System.out.println("consumeInfo.....Map..."+consumeInfoForPeriodicSensor);
 
 					}
 
 				}
 			}
-		    
+
 		}
-	 //System.out.println("consumeInfo "+consumeInfoForSensor);
+
 	}
 
 	private void insertFieldType(String structName, String fieldType) {
@@ -335,28 +329,21 @@ public class SymbolTable {
 
 	private static void searchStructFieldNameForAggregator(
 			String aggregatorStructName) {
-		List<String> tempPeriodicFieldName = new ArrayList<String>();
 
 		for (int i = 0; i < 10; i++) {
 			if (arrayFieldName[i][0] != null) {
 				if (arrayFieldName[i][0].equals(aggregatorStructName)) {
-					tempPeriodicFieldName.add(arrayFieldName[i][1]);
-					for (int j = 0; j < tempPeriodicFieldName.size(); j++) {
-						if (!aggregatorFieldName.contains(tempPeriodicFieldName
-								.get(j))) {
-					aggregatorFieldName.add(arrayFieldName[i][1]);
-					
+
 					Field = new StructField(arrayFieldName[i][1],
 							new PrimitiveType(arrayFieldType[i][1]));
 
 					StructFieldSet.add(Field);
 
 				}
-					}
-				}
 			}
 		}
-		//System.out.println("Struct Filed Set "+StructFieldSet+ "in Symbol Table.java");
+		
+	//	System.out.println("Struct Field Set is "+ StructFieldSet + "Field is "+Field);
 	}
 
 	public static void searchStructFieldNameForGUI(String requestGUIStructName) {
